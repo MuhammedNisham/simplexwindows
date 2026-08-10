@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Simplex Premium Steel</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        /* Core Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff; /* Pure white background */
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0; 
+        }
+        .navbar-brand, .nav-link {
+            color: #111 !important; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .nav-link.active {
+            border-bottom: 2px solid #111; /* Highlights the current page */
+        }
+        
+        /* Scrolling Marquee */
+        .marquee-container {
+            background-color: #ffffff;
+            color: #111;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 80px 0 40px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            color: #111;
+        }
+        
+        /* Product Grid Styling */
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #111;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
+        .product-card {
+            border: none;
+            background: transparent;
+            margin-bottom: 40px;
+        }
+        .product-img-wrapper {
+            height: 400px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #111;
+            text-transform: uppercase;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #ffffff;
+            color: #555;
+            padding: 60px 0 30px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 60px;
+        }
+        .footer h6, .footer h4 {
+            color: #111;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Marquee Announcement Bar -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <!-- Logo stays physically small to keep navbar thin, but scales up visually -->
+                <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-dark fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                    <!-- Active class added here to show we are on the Products page -->
+                    <li class="nav-item"><a class="nav-link px-3 active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html#showcase">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html#details">Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Collection</h1>
+            <p class="text-muted mt-3">Explore our hyper-realistic structural frames and commercial-grade layouts.</p>
+        </div>
+    </header>
+
+    <!-- Full Product Grid Section -->
+    <section class="container mb-5">
+        
+        <!-- Windows Category -->
+        <h3 class="category-title">Steel Windows</h3>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card text-center">
+                    <div class="product-img-wrapper">
+                        <img src="assets/window-grid.jpg" alt="Classic Grid Window Frame">
+                    </div>
+                    <h5 class="product-title">Classic Grid Frame</h5>
+                    <p class="text-muted small mb-3">Timeless multi-pane layout. Showcased as a pure structural frame without glass.</p>
+                    <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card text-center">
+                    <div class="product-img-wrapper">
+                        <img src="assets/window-arch.jpg" alt="Arched Steel Window">
+                    </div>
+                    <h5 class="product-title">Arched Steel Frame</h5>
+                    <p class="text-muted small mb-3">Precision-engineered curved layout with preserving details.</p>
+                    <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card text-center">
+                    <div class="product-img-wrapper">
+                        <img src="assets/window-minimal.jpg" alt="Minimalist Window Frame">
+                    </div>
+                    <h5 class="product-title">Minimalist Profile</h5>
+                    <p class="text-muted small mb-3">Ultra-slim borders designed for raw, unobstructed structural viewing.</p>
+                    <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doors Category -->
+        <h3 class="category-title">Commercial Doors</h3>
+        <div class="row">
+            <!-- Product 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card text-center">
+                    <div class="product-img-wrapper">
+                        <img src="assets/door-pivot.jpg" alt="Modern Pivot Door">
+                    </div>
+                    <h5 class="product-title">Modern Pivot Door</h5>
+                    <p class="text-muted small mb-3">Bold, oversized structural frame designed for commercial entryways.</p>
+                    <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card text-center">
+                    <div class="product-img-wrapper">
+                        <img src="assets/door-bifold.jpg" alt="Bifold System">
+                    </div>
+                    <h5 class="product-title">Bi-Fold System</h5>
+                    <p class="text-muted small mb-3">Maximal opening capability with heavy-duty commercial tracking.</p>
+                    <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card text-center">
+                    <div class="product-img-wrapper">
+                        <img src="assets/door-french.jpg" alt="Double French Doors">
+                    </div>
+                    <h5 class="product-title">Double French Doors</h5>
+                    <p class="text-muted small mb-3">Symmetrical layout showcasing premium engineering and clean lines.</p>
+                    <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center text-md-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="fw-bold mb-3">SIMPLEX</h4>
+                    <p class="small pe-md-5">We specialize in highly detailed, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Menu</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-decoration-none text-muted">Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Connect</h6>
+                    <p class="small mb-1"><i class="bi bi-envelope"></i> design@simplex.com</p>
+                    <p class="small mb-1"><i class="bi bi-telephone"></i> +91 12345 67890</p>
+                </div>
+            </div>
+            <div class="text-center small mt-4 pt-3 border-top" style="border-color: #f0f0f0 !important;">
+                &copy; 2026 Simplex. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
