@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplex - Premium Steel Windows & Doors</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        /* Core Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff; /* Pure white background */
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0; /* Subtle border */
+        }
+        .navbar-brand, .nav-link {
+            color: #111 !important; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Smooth Carousel Fade Transition */
+        .carousel-item {
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out !important;
+            height: 85vh;
+            background-color: #ffffff; 
+        }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.85; 
+        }
+        .hero-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #111; 
+            z-index: 10;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.7); /* Pure white frosted background */
+            padding: 40px 20px;
+            border-radius: 4px;
+        }
+        .hero-caption h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        /* Scrolling Marquee */
+        .marquee-container {
+            background-color: #ffffff;
+            color: #111;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Product Showcase Grid */
+        .product-card {
+            border: none;
+            background: transparent;
+            margin-bottom: 40px;
+        }
+        .product-img-wrapper {
+            height: 450px;
+            overflow: hidden;
+            background-color: #f8f9fa; /* Very light gray for image placeholders */
+            position: relative;
+        }
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #111;
+            text-transform: uppercase;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #ffffff;
+            color: #555;
+            padding: 60px 0 30px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .footer h6, .footer h4 {
+            color: #111;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Marquee Announcement Bar -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="#">
+                <!-- Logo Image Placeholder -->
+                <img src="assets/logo.png" alt="Simplex" height="35" class="me-3" onerror="this.style.display='none'">
+                SIMPLEX
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-dark fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#showcase">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#details">Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Smooth Fading Carousel -->
+    <div id="heroCarousel" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="assets/hero-window.jpg" alt="Premium Window" onerror="this.style.display='none'">
+                <div class="hero-caption">
+                    <h1>ARCHITECTURAL STEEL</h1>
+                    <p class="lead">Uncompromising durability with ultra-slim profiles.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="assets/hero-door.jpg" alt="Commercial Door" onerror="this.style.display='none'">
+                <div class="hero-caption">
+                    <h1>COMMERCIAL GRADE</h1>
+                    <p class="lead">Statement entryways designed for modern spaces.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Product Showcase -->
+    <section id="showcase" class="py-5 mt-4">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase" style="color: #111;">Featured Designs</h2>
+                <p class="text-muted">Browse our collection of seamless structural layouts.</p>
+            </div>
+            
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-1.jpg" alt="Steel Window without glass">
+                        </div>
+                        <h5 class="product-title">Classic Grid Window</h5>
+                        <p class="text-muted small mb-3">Timeless multi-pane layout</p>
+                        <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/door-1.jpg" alt="Pivot Door">
+                        </div>
+                        <h5 class="product-title">Modern Pivot Door</h5>
+                        <p class="text-muted small mb-3">Bold, oversized structural frame</p>
+                        <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/bifold-1.jpg" alt="Bifold System">
+                        </div>
+                        <h5 class="product-title">Bi-Fold System</h5>
+                        <p class="text-muted small mb-3">Maximal opening capability</p>
+                        <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center text-md-start mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="fw-bold mb-3">SIMPLEX</h4>
+                    <p class="small pe-md-5">We specialize in highly detailed, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Menu</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#showcase" class="text-decoration-none text-muted">Our Showcase</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Connect</h6>
+                    <p class="small mb-1"><i class="bi bi-envelope"></i> design@simplex.com</p>
+                    <p class="small mb-1"><i class="bi bi-telephone"></i> +91 12345 67890</p>
+                </div>
+            </div>
+            <div class="text-center small mt-4 pt-3 border-top" style="border-color: #f0f0f0 !important;">
+                &copy; 2026 Simplex. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
