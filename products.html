@@ -16,6 +16,37 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
         }
+
+        /* Blur Animations applied to the Wrapper instead of Body */
+        #page-wrapper {
+            animation: blurIn 0.4s ease-out forwards;
+        }
+
+        .page-blur-out #page-wrapper {
+            animation: blurOut 0.3s ease-in forwards;
+        }
+
+        @keyframes blurIn {
+            0% { 
+                opacity: 0;
+                filter: blur(5px); 
+            }
+            100% { 
+                opacity: 1;
+                filter: blur(0px); 
+            }
+        }
+
+        @keyframes blurOut {
+            0% { 
+                opacity: 1;
+                filter: blur(0px); 
+            }
+            100% { 
+                opacity: 0;
+                filter: blur(5px); 
+            }
+        }
         
         /* Navbar */
         .navbar {
@@ -125,151 +156,237 @@
 </head>
 <body>
 
-    <!-- Marquee Announcement Bar -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
+    <!-- Main Content Wrapper (Applies blur here, not on the body) -->
+    <div id="page-wrapper">
+        
+        <!-- Marquee Announcement Bar -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
+            </div>
         </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="bi bi-list text-dark fs-2"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 active" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="index.html#about-us">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1>Our Collection</h1>
+                <p class="text-muted mt-3">Explore our hyper-realistic structural frames and commercial-grade layouts.</p>
+            </div>
+        </header>
+
+        <!-- Product Generator Automation (Hidden by default) -->
+        <section id="adminPanel" class="container mt-4 mb-5 p-4 d-none" style="background-color: #f8f9fa; border: 1px dashed #ccc;">
+            <h4 class="text-uppercase mb-4 fw-bold" style="font-size: 1.2rem;">+ Generate Product Code (For GitHub)</h4>
+            <form id="productGeneratorForm">
+                <div class="row align-items-end">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Product Name</label>
+                        <input type="text" class="form-control rounded-0" id="newProdName" required placeholder="e.g. Slimline French Door">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Description</label>
+                        <input type="text" class="form-control rounded-0" id="newProdDesc" required placeholder="e.g. Minimalist layout with heavy-duty tracking.">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Image Filename</label>
+                        <input type="text" class="form-control rounded-0" id="newProdImage" required placeholder="e.g. door-new.jpg">
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <button type="submit" class="btn btn-dark w-100 rounded-0">Generate Code</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div id="codeOutputBox" class="mt-3 d-none">
+                <label class="form-label small fw-bold text-success text-uppercase">Copy this code and paste it into products.html inside the Windows section.</label>
+                <textarea id="generatedCode" class="form-control" rows="8" readonly style="font-family: monospace; font-size: 0.9rem;"></textarea>
+            </div>
+        </section>
+
+        <!-- Full Product Grid Section -->
+        <section class="container mb-5">
+            
+            <!-- SECTION 1: Featured Products -->
+            <h3 class="category-title">Featured Products</h3>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-grid.jpg" alt="Classic Grid Window Frame">
+                        </div>
+                        <h5 class="product-title">Classic Grid Frame</h5>
+                        <p class="text-muted small mb-3">Timeless multi-pane layout. Showcased as a pure structural frame without glass.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Classic Grid Frame';">Call Now</button>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-arch.jpg" alt="Arched Steel Window">
+                        </div>
+                        <h5 class="product-title">Arched Steel Frame</h5>
+                        <p class="text-muted small mb-3">Precision-engineered curved layout with preserving details.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Arched Steel Frame';">Call Now</button>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-minimal.jpg" alt="Minimalist Window Frame">
+                        </div>
+                        <h5 class="product-title">Minimalist Profile</h5>
+                        <p class="text-muted small mb-3">Ultra-slim borders designed for raw, unobstructed structural viewing.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Minimalist Profile';">Call Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Commercial Doors -->
+            <h3 class="category-title">Commercial Doors</h3>
+            <div class="row">
+                <!-- Product 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/door-pivot.jpg" alt="Modern Pivot Door">
+                        </div>
+                        <h5 class="product-title">Modern Pivot Door</h5>
+                        <p class="text-muted small mb-3">Bold, oversized structural frame designed for commercial entryways.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Modern Pivot Door';">Call Now</button>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/door-bifold.jpg" alt="Bifold System">
+                        </div>
+                        <h5 class="product-title">Bi-Fold System</h5>
+                        <p class="text-muted small mb-3">Maximal opening capability with heavy-duty commercial tracking.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Bi-Fold System';">Call Now</button>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/door-french.jpg" alt="Double French Doors">
+                        </div>
+                        <h5 class="product-title">Double French Doors</h5>
+                        <p class="text-muted small mb-3">Symmetrical layout showcasing premium engineering and clean lines.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Double French Doors';">Call Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Windows -->
+            <h3 class="category-title" id="windows-section">Windows</h3>
+            <!-- Row updated to fit 4 items nicely (using col-lg-3 instead of col-lg-4) -->
+            <div class="row" id="windowsRow">
+                <!-- Product 7 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-casement.jpg" alt="Casement Steel Window">
+                        </div>
+                        <h5 class="product-title">Casement Window</h5>
+                        <p class="text-muted small mb-3">Traditional side-hinged design with modern, slimline structural integrity.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Casement Window';">Call Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-awning.jpg" alt="Awning Window Frame">
+                        </div>
+                        <h5 class="product-title">Awning Frame</h5>
+                        <p class="text-muted small mb-3">Top-hinged layout perfect for ventilation while maintaining structural resistance.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Awning Frame';">Call Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-fixed.jpg" alt="Fixed Picture Window">
+                        </div>
+                        <h5 class="product-title">Fixed Picture Window</h5>
+                        <p class="text-muted small mb-3">Expansive, uninterrupted views with a heavy-duty, minimalist steel border.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Fixed Picture Window';">Call Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card text-center">
+                        <div class="product-img-wrapper">
+                            <img src="assets/window-ribbon.jpg" alt="Ribbon Window System">
+                        </div>
+                        <h5 class="product-title">Ribbon Window System</h5>
+                        <p class="text-muted small mb-3">Continuous horizontal layout designed for striking architectural facades.</p>
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Ribbon Window System';">Call Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer text-center text-md-start">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h4 class="fw-bold mb-3">SIMPLEX</h4>
+                        <p class="small pe-md-5">We specialize in highly detailed, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering.</p>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <h6>Menu</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                            <li class="mb-2"><a href="products.html" class="text-decoration-none text-muted">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <h6>Connect</h6>
+                        <p class="small mb-1"><i class="bi bi-envelope"></i> design@simplex.com</p>
+                        <p class="small mb-1"><i class="bi bi-telephone"></i> +91 12345 67890</p>
+                    </div>
+                </div>
+                <div class="text-center small mt-4 pt-3 border-top" style="border-color: #f0f0f0 !important;">
+                    &copy; 2026 Simplex. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+    <!-- Closes the page-wrapper -->
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-dark fs-2"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-3 active" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="index.html#showcase">Showcase</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="index.html#about-us">About Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1>Our Collection</h1>
-            <p class="text-muted mt-3">Explore our hyper-realistic structural frames and commercial-grade layouts.</p>
-        </div>
-    </header>
-
-    <!-- Product Generator Automation (Hidden by default) -->
-    <section id="adminPanel" class="container mt-4 mb-5 p-4 d-none" style="background-color: #f8f9fa; border: 1px dashed #ccc;">
-        <h4 class="text-uppercase mb-4 fw-bold" style="font-size: 1.2rem;">+ Generate Product Code (For GitHub)</h4>
-        <form id="productGeneratorForm">
-            <div class="row align-items-end">
-                <div class="col-md-3 mb-3">
-                    <label class="form-label small fw-bold text-muted text-uppercase">Product Name</label>
-                    <input type="text" class="form-control rounded-0" id="newProdName" required placeholder="e.g. Slimline French Door">
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label class="form-label small fw-bold text-muted text-uppercase">Description</label>
-                    <input type="text" class="form-control rounded-0" id="newProdDesc" required placeholder="e.g. Minimalist layout with heavy-duty tracking.">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label class="form-label small fw-bold text-muted text-uppercase">Image Filename</label>
-                    <input type="text" class="form-control rounded-0" id="newProdImage" required placeholder="e.g. door-new.jpg">
-                </div>
-                <div class="col-md-2 mb-3">
-                    <button type="submit" class="btn btn-dark w-100 rounded-0">Generate Code</button>
-                </div>
-            </div>
-        </form>
-        
-        <div id="codeOutputBox" class="mt-3 d-none">
-            <label class="form-label small fw-bold text-success text-uppercase">Copy this code and paste it into products.html</label>
-            <textarea id="generatedCode" class="form-control" rows="8" readonly style="font-family: monospace; font-size: 0.9rem;"></textarea>
-        </div>
-    </section>
-
-    <!-- Full Product Grid Section -->
-    <section class="container mb-5">
-        
-        <!-- Windows Category -->
-        <h3 class="category-title">Steel Windows</h3>
-        <div class="row">
-            <!-- Product 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card product-card text-center">
-                    <div class="product-img-wrapper">
-                        <img src="assets/window-grid.jpg" alt="Classic Grid Window Frame">
-                    </div>
-                    <h5 class="product-title">Classic Grid Frame</h5>
-                    <p class="text-muted small mb-3">Timeless multi-pane layout. Showcased as a pure structural frame without glass.</p>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Classic Grid Frame';">Call Now</button>
-                </div>
-            </div>
-            <!-- Product 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card product-card text-center">
-                    <div class="product-img-wrapper">
-                        <img src="assets/window-arch.jpg" alt="Arched Steel Window">
-                    </div>
-                    <h5 class="product-title">Arched Steel Frame</h5>
-                    <p class="text-muted small mb-3">Precision-engineered curved layout with preserving details.</p>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Arched Steel Frame';">Call Now</button>
-                </div>
-            </div>
-            <!-- Product 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card product-card text-center">
-                    <div class="product-img-wrapper">
-                        <img src="assets/window-minimal.jpg" alt="Minimalist Window Frame">
-                    </div>
-                    <h5 class="product-title">Minimalist Profile</h5>
-                    <p class="text-muted small mb-3">Ultra-slim borders designed for raw, unobstructed structural viewing.</p>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Minimalist Profile';">Call Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Doors Category -->
-        <h3 class="category-title">Commercial Doors</h3>
-        <div class="row">
-            <!-- Product 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card product-card text-center">
-                    <div class="product-img-wrapper">
-                        <img src="assets/door-pivot.jpg" alt="Modern Pivot Door">
-                    </div>
-                    <h5 class="product-title">Modern Pivot Door</h5>
-                    <p class="text-muted small mb-3">Bold, oversized structural frame designed for commercial entryways.</p>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Modern Pivot Door';">Call Now</button>
-                </div>
-            </div>
-            <!-- Product 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card product-card text-center">
-                    <div class="product-img-wrapper">
-                        <img src="assets/door-bifold.jpg" alt="Bifold System">
-                    </div>
-                    <h5 class="product-title">Bi-Fold System</h5>
-                    <p class="text-muted small mb-3">Maximal opening capability with heavy-duty commercial tracking.</p>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Bi-Fold System';">Call Now</button>
-                </div>
-            </div>
-            <!-- Product 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card product-card text-center">
-                    <div class="product-img-wrapper">
-                        <img src="assets/door-french.jpg" alt="Double French Doors">
-                    </div>
-                    <h5 class="product-title">Double French Doors</h5>
-                    <p class="text-muted small mb-3">Symmetrical layout showcasing premium engineering and clean lines.</p>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Double French Doors';">Call Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Callback Pop-up Modal -->
+    <!-- Callback Pop-up Modal (MUST be outside #page-wrapper to prevent CSS blur bug) -->
     <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-0">
@@ -306,38 +423,10 @@
                         <h5 class="mt-3 fw-bold">Thank You!</h5>
                         <p class="text-muted">Your details have been received. You will get a callback shortly.</p>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer text-center text-md-start">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h4 class="fw-bold mb-3">SIMPLEX</h4>
-                    <p class="small pe-md-5">We specialize in highly detailed, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering.</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h6>Menu</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
-                        <li class="mb-2"><a href="products.html" class="text-decoration-none text-muted">Products</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h6>Connect</h6>
-                    <p class="small mb-1"><i class="bi bi-envelope"></i> design@simplex.com</p>
-                    <p class="small mb-1"><i class="bi bi-telephone"></i> +91 12345 67890</p>
-                </div>
-            </div>
-            <div class="text-center small mt-4 pt-3 border-top" style="border-color: #f0f0f0 !important;">
-                &copy; 2026 Simplex. All rights reserved.
-            </div>
-        </div>
-    </footer>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -354,7 +443,7 @@
             }
         });
 
-        // --- 2. GENERATE HTML CODE FOR GITHUB ---
+        // --- 2. GENERATE HTML CODE FOR GITHUB AND LIVE PREVIEW ---
         document.getElementById('productGeneratorForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -362,10 +451,10 @@
             const desc = document.getElementById('newProdDesc').value;
             const imageFilename = document.getElementById('newProdImage').value;
 
-            // Create the clean HTML block with the Call Now button
+            // Notice: Updated this to col-lg-3 so new products match the 4-card row!
             const cardHTML = `
 <!-- New Product: ${name} -->
-<div class="col-md-6 col-lg-4">
+<div class="col-md-6 col-lg-3">
     <div class="card product-card text-center">
         <div class="product-img-wrapper">
             <img src="assets/${imageFilename}" alt="${name}">
@@ -376,15 +465,17 @@
     </div>
 </div>`;
 
-            // Show the code in the text box
+            // 1. Show the code in the text box for GitHub pushing
             const outputBox = document.getElementById('codeOutputBox');
             const textArea = document.getElementById('generatedCode');
             
             outputBox.classList.remove('d-none');
             textArea.value = cardHTML.trim();
-            
-            // Select the text automatically to make copying easier
             textArea.select();
+
+            // 2. Inject it live into the new Windows section for preview
+            const windowsRow = document.getElementById('windowsRow');
+            windowsRow.insertAdjacentHTML('afterbegin', cardHTML);
         });
 
         // --- 3. BACKGROUND FORM SUBMISSION (No Redirect) ---
@@ -392,7 +483,7 @@
         
         if (callbackForm) {
             callbackForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // Stops the page from leaving your website
+                e.preventDefault(); 
 
                 const submitBtn = document.getElementById('submitBtn');
                 submitBtn.innerHTML = 'Sending...';
@@ -409,7 +500,6 @@
                 .then(async (response) => {
                     let json = await response.json();
                     if (response.status == 200) {
-                        // Success! Hide the form and show the thank you message
                         callbackForm.classList.add('d-none');
                         document.getElementById('formSubtitle').classList.add('d-none');
                         document.getElementById('successMessage').classList.remove('d-none');
@@ -428,7 +518,6 @@
         }
 
         // --- 4. RESET MODAL ON CLOSE ---
-        // When the user clicks the "X" to close the modal, reset it for the next time
         const callbackModal = document.getElementById('callbackModal');
         callbackModal.addEventListener('hidden.bs.modal', function () {
             document.getElementById('callbackForm').reset();
@@ -439,6 +528,27 @@
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.innerHTML = 'Submit Details';
             submitBtn.disabled = false;
+        });
+
+        // --- 5. SMOOTH PAGE BLUR SCRIPT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Only apply transition to actual internal page links
+                    if (href && !href.startsWith('#') && !href.startsWith('http') && !this.hasAttribute('data-bs-toggle')) {
+                        e.preventDefault(); 
+                        document.body.classList.add('page-blur-out'); // Trigger the blur class
+                        
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 500);
+                    }
+                });
+            });
         });
     </script>
 </body>
