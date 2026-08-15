@@ -11,23 +11,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
     <style>
-        /* Core Styling & Blur In Animation */
+        /* Core Styling */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
-            /* Applies the blur-in effect when the page loads */
-            animation: blurIn 0.6s ease-out forwards;
         }
         
-        /* Blur Out Animation */
-        .page-blur-out {
-            animation: blurOut 0.5s ease-in forwards;
+        /* Blur In Animation applied to wrapper */
+        #page-content {
+            animation: blurIn 0.3s ease-out forwards;
+        }
+        
+        /* Blur Out Animation applied to wrapper when body gets the class */
+        .page-blur-out #page-content {
+            animation: blurOut 0.3s ease-in forwards;
         }
 
         @keyframes blurIn {
             0% { 
                 opacity: 0;
-                filter: blur(5px); 
+                filter: blur(4px); 
             }
             100% { 
                 opacity: 1;
@@ -42,7 +45,7 @@
             }
             100% { 
                 opacity: 0;
-                filter: blur(5px); 
+                filter: blur(4px); 
             }
         }
         
@@ -160,162 +163,383 @@
 </head>
 <body>
 
-    <!-- Marquee Announcement Bar -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
-        </div>
-    </div>
+    <!-- Main Content Wrapper (For Blur Animation) -->
+    <div id="page-content">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-dark fs-2"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#about-us">About Us</a></li>
-                </ul>
+        <!-- Marquee Announcement Bar -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
             </div>
         </div>
-    </nav>
-    
-    <!-- Hero Section with Smooth Fading Carousel -->
-    <div id="heroCarousel" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- First Image -->
-            <div class="carousel-item active" data-bs-interval="4000">
-                <img src="assets/ca1.jpg" alt="Premium Window" onerror="this.style.display='none'">
-            </div>
-            
-            <!-- Second Image -->
-            <div class="carousel-item" data-bs-interval="4000">
-                <img src="assets/ca2.png" alt="Commercial Door" onerror="this.style.display='none'">
-            </div>
-        </div>
-        
-        <!-- Navigation Arrows -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
 
-    <!-- Product Showcase -->
-    <section id="showcase" class="py-5 mt-4">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-uppercase" style="color: #111;">Featured Designs</h2>
-                <p class="text-muted">Browse our collection of seamless structural layouts.</p>
-            </div>
-            
-            <div class="row">
-                <!-- Item 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card product-card text-center">
-                        <div class="product-img-wrapper">
-                            <img src="assets/window-1.jpg" alt="Steel Window without glass">
-                        </div>
-                        <h5 class="product-title">Classic Grid Window</h5>
-                        <p class="text-muted small mb-3">Timeless multi-pane layout</p>
-                        <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card product-card text-center">
-                        <div class="product-img-wrapper">
-                            <img src="assets/door-1.jpg" alt="Pivot Door">
-                        </div>
-                        <h5 class="product-title">Modern Pivot Door</h5>
-                        <p class="text-muted small mb-3">Bold, oversized structural frame</p>
-                        <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card product-card text-center">
-                        <div class="product-img-wrapper">
-                            <img src="assets/bifold-1.jpg" alt="Bifold System">
-                        </div>
-                        <h5 class="product-title">Bi-Fold System</h5>
-                        <p class="text-muted small mb-3">Maximal opening capability</p>
-                        <a href="#" class="btn btn-outline-dark w-100 rounded-0">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- See All Products Button -->
-            <div class="text-center mt-5">
-                <a href="products.html" class="btn btn-dark rounded-0 px-5 py-2 text-uppercase fw-bold" style="letter-spacing: 1px;">
-                    See All Products
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
                 </a>
-            </div>
-            
-        </div>
-    </section>
-    
-    <!-- About Us Section -->
-    <section id="about-us" class="py-5 bg-light mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    <h2 class="fw-bold text-uppercase" style="color: #111;">About Simplex</h2>
-                    <div style="width: 50px; height: 3px; background-color: #111; margin-bottom: 20px;"></div>
-                    <p class="text-muted">
-                        We specialize in hyper-realistic, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering. 
-                    </p>
-                    <p class="text-muted">
-                        Whether it is a commercial storefront or a high-end residential build, our precision-crafted steel frames offer maximum durability with minimal sightlines.
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <img src="assets/ca1.jpg" alt="Simplex Quality" class="img-fluid rounded shadow-sm" style="max-height: 400px; width: 100%; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center text-md-start mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h4 class="fw-bold mb-3">SIMPLEX</h4>
-                    <p class="small pe-md-5">We specialize in highly detailed, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering.</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h6>Menu</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
-                        <li class="mb-2"><a href="#showcase" class="text-decoration-none text-muted">Our Showcase</a></li>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="bi bi-list text-dark fs-2"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="franchises.html">Franchises</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#about-us">About Us</a></li>
                     </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h6>Connect</h6>
-                    <p class="small mb-1"><i class="bi bi-envelope"></i> design@simplex.com</p>
-                    <p class="small mb-1"><i class="bi bi-telephone"></i> +91 12345 67890</p>
+                    <div class="d-flex align-items-center mt-3 mt-lg-0">
+                        <button type="button" class="btn btn-outline-dark rounded-0 px-4 py-2 text-uppercase fw-bold d-flex align-items-center gap-2" style="letter-spacing: 1px; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'General Inquiry';">
+                            <i class="bi bi-telephone-fill"></i> Contact Us
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="text-center small mt-4 pt-3 border-top" style="border-color: #f0f0f0 !important;">
-                &copy; 2026 Simplex. All rights reserved.
+        </nav>
+        
+        <!-- Hero Section with Smooth Fading Carousel -->
+        <div id="heroCarousel" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="assets/ca1.jpg" alt="Premium Window" onerror="this.style.display='none'">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="assets/ca2.png" alt="Commercial Door" onerror="this.style.display='none'">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- Product Showcase -->
+        <section id="showcase" class="py-5 mt-4">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase" style="color: #111;">Featured Designs</h2>
+                    <p class="text-muted">Browse our collection of seamless structural layouts.</p>
+                </div>
+                
+                <div class="row">
+                    <!-- Item 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card product-card text-center">
+                            <div class="product-img-wrapper">
+                                <img src="assets/window-1.jpg" alt="Steel Window without glass">
+                            </div>
+                            <h5 class="product-title">Classic Grid Window</h5>
+                            <p class="text-muted small mb-3">Timeless multi-pane layout</p>
+                            <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Classic Grid Window';">Call Now</button>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card product-card text-center">
+                            <div class="product-img-wrapper">
+                                <img src="assets/door-1.jpg" alt="Pivot Door">
+                            </div>
+                            <h5 class="product-title">Modern Pivot Door</h5>
+                            <p class="text-muted small mb-3">Bold, oversized structural frame</p>
+                            <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Modern Pivot Door';">Call Now</button>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card product-card text-center">
+                            <div class="product-img-wrapper">
+                                <img src="assets/bifold-1.jpg" alt="Bifold System">
+                            </div>
+                            <h5 class="product-title">Bi-Fold System</h5>
+                            <p class="text-muted small mb-3">Maximal opening capability</p>
+                            <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Bi-Fold System';">Call Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- See All Products Button -->
+                <div class="text-center mt-5">
+                    <a href="products.html" class="btn btn-dark rounded-0 px-5 py-2 text-uppercase fw-bold" style="letter-spacing: 1px;">
+                        See All Products
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about-us" class="py-5 bg-light mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h2 class="fw-bold text-uppercase" style="color: #111;">WHO WE ARE</h2>
+                        <div style="width: 50px; height: 3px; background-color: #111; margin-bottom: 20px;"></div>
+                        <p class="text-muted">
+                            Simplex is Kerala's premier manufacturer of high-quality, premium steel windows and doors.
+                            We are dedicated to bringing any custom design or unique requirement to life, strictly on time.
+                            Our precision manufacturing process guarantees absolutely no compromise on structural quality and finish. 
+                        </p>
+                        <p class="text-muted mb-4">
+                            We proudly supply and deliver our premium steel products to residential and commercial projects all across India.
+                            For our local clients, we offer the added benefit of completely free delivery anywhere within the state of Kerala.
+                            Beyond our craftsmanship, we are best known for our exceptional and highly reliable after-sales service.
+                        </p>
+
+                        <!-- Social Media Links -->
+                        <div class="d-flex align-items-center gap-3 pt-2">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/simplexwindows" target="_blank" class="text-dark fs-4 transition-hover" title="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/simplexindows" target="_blank" class="text-dark fs-4 transition-hover" title="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="https://wa.link/3ytl2k" target="_blank" class="text-dark fs-4 transition-hover" title="WhatsApp">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                            <!-- YouTube -->
+                            <a href="https://www.youtube.com/@simplexwindows" target="_blank" class="text-dark fs-4 transition-hover" title="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="assets/company.png" alt="Simplex Quality" class="img-fluid rounded shadow-sm" style="max-height: 400px; width: 100%; object-fit: cover;" onerror="this.src='assets/ca1.jpg'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Ambassador Section -->
+        <section id="brand-ambassador" class="py-5 my-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Ambassador Image -->
+                    <div class="col-md-5 mb-4 mb-md-0">
+                        <div class="position-relative">
+                            <img src="assets/shajon.jpeg" alt="Kalabhavan Shajon - Simplex Brand Ambassador" class="img-fluid rounded shadow-sm" style="max-height: 400px; width: 100%; object-fit: cover; position: relative; z-index: 2;">
+                            <!-- Decorative background accent -->
+                            <div class="position-absolute bg-light w-100 h-100 rounded" style="top: 20px; left: -20px; z-index: 1;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ambassador Text -->
+                    <div class="col-md-7 ps-md-5">
+                        <p class="text-uppercase fw-bold mb-1" style="color: #555; letter-spacing: 2px; font-size: 0.85rem;">Our Brand Ambassador</p>
+                        <h2 class="fw-bold text-uppercase" style="color: #111;">Kalabhavan Shajon</h2>
+                        <div style="width: 50px; height: 3px; background-color: #111; margin-bottom: 20px;"></div>
+                        
+                        <p class="text-muted mb-4">
+                            We are proud to be represented by the versatile and celebrated actor, <strong>Kalabhavan Shajon</strong>, as the face of Simplex. Known for his powerful performances and authentic presence, he perfectly embodies the strength, reliability, and premium quality that Simplex Steel Windows & Doors stands for.
+                        </p>
+                        
+                        <!-- Quote Block -->
+                        <div class="p-4 rounded border-start border-4 border-dark" style="background-color: #f8f9fa;">
+                            <p class="fst-italic text-muted mb-2">"Just like a great performance relies on a strong foundation, a secure and beautiful home demands the unmatched strength and elegance of Simplex."</p>
+                            <p class="fw-bold text-uppercase mb-0" style="color: #111; font-size: 0.85rem; letter-spacing: 1px;">— Kalabhavan Shajon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Footer -->
+       <footer class="footer text-center text-md-start mt-5">
+           <div class="container">
+               <div class="row">
+                   <!-- Facility Info & Address -->
+                   <div class="col-md-6 mb-5 mb-md-0">
+                       <h4 class="fw-bold mb-3 text-uppercase" style="letter-spacing: 1px;">Our Facility</h4>
+                       
+                       <!-- 3-Line Locality Description -->
+                       <p class="small pe-md-5 mb-4 text-muted">
+                           Located within the KINFRA IIT Park in Kanjikode, our facility sits in one of Kerala's most prominent industrial hubs. This strategic position in Palakkad provides the ideal infrastructure and connectivity for our precision manufacturing. The surrounding industrial ecosystem perfectly supports our commitment to uncompromising engineering and seamless distribution.
+                       </p>
+
+                       <!-- Corporate Address Section -->
+                       <div>
+                           <div class="d-flex align-items-start justify-content-center justify-content-md-start">
+                               <i class="bi bi-geo-alt-fill fs-5 me-3" style="color: #111;"></i>
+                               <p class="small mb-0 text-start text-muted">
+                                   <strong class="text-dark" style="font-size: 0.95rem;">KINFRA IIT Park</strong><br>
+                                   Plot No A-53 A54 A54-1, Avenue road<br>
+                                   Menonpara road, Kanjikode east PO <br>
+                                   Palakkad, Kerala, India - 678621
+                               </p>
+                           </div>
+                       </div>
+                   </div>
+                   
+                   <!-- Expanded Corporate Office Map -->
+                   <div class="col-md-6">
+                       <h6 class="mb-3 text-uppercase" style="letter-spacing: 1px;">Find Us Here</h6>
+                       <!-- Larger Map Container -->
+                       <div class="shadow-sm w-100" style="height: 250px; overflow: hidden; border-radius: 8px; border: 1px solid #f0f0f0;">
+                           <iframe 
+                               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53931.20343404562!2d76.71262726496593!3d10.77897340495536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86b07a4b2722d%3A0x6802ab609a1ba20c!2sSIMPLEX%20ROOFING%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1786519483971!5m2!1sen!2sin" 
+                               width="100%" 
+                               height="100%" 
+                               style="border:0;" 
+                               allowfullscreen="" 
+                               loading="lazy" 
+                               referrerpolicy="no-referrer-when-downgrade">
+                           </iframe>
+                       </div>
+                   </div>
+               </div>
+               <div class="text-center small mt-5 pt-3 border-top" style="border-color: #f0f0f0 !important;">
+                   &copy; 2026 Simplex. All rights reserved.
+               </div>
+           </div>
+       </footer>
+
+    </div> 
+    <!-- END OF PAGE CONTENT WRAPPER -->
+
+
+    <!-- Contact & Request Callback Modal -->
+    <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-0 border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    
+                    <!-- Form Container -->
+                    <div id="formContainer">
+                        <div class="row g-4">
+                            <!-- Left Side: Contact Info & WhatsApp -->
+                            <div class="col-md-5 border-end-md pe-md-4 d-flex flex-column">
+                                <div>
+                                    <h4 class="fw-bold text-uppercase mb-3" style="color: #111; letter-spacing: 1px;">Get In Touch</h4>
+                                    <p class="text-muted small mb-4">Speak directly with our team or drop us an email regarding your project requirements.</p>
+                                    
+                                    <div class="mb-3">
+                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Phone Call</span>
+                                        <a href="tel:+917510800577" class="text-decoration-none fw-bold text-dark fs-6">+91 75108 00577</a>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Email Inquiry</span>
+                                        <a href="mailto:design@simplex.com" class="text-decoration-none fw-bold text-dark fs-6">design@simplex.com</a>
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp Button Section -->
+                                <div class="mt-4 pt-4 border-top">
+                                    <!-- <span class="text-uppercase text-muted small fw-bold d-block mb-2">Instant Chat</span> -->
+                                    
+                                    <!-- PASTE YOUR WHATSAPP LINK IN THE href BELOW -->
+                                    <a href="https://wa.link/3ytl2k" target="_blank" class="btn w-100 rounded-0 text-uppercase fw-bold py-2 d-flex justify-content-center align-items-center gap-2 text-white" style="letter-spacing: 1px; background-color: #25D366; border-color: #25D366;">
+                                        <i class="bi bi-whatsapp fs-5"></i> WhatsApp Now
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <!-- Right Side: Request Callback Form -->
+                            <div class="col-md-7 ps-md-4">
+                                <h4 class="fw-bold text-uppercase mb-2" style="color: #111; letter-spacing: 1px;">Request A Callback</h4>
+                                <p class="text-muted small mb-4">Fill out the form below and our design expert will get back to you shortly.</p>
+                                
+                                <form id="callbackForm" action="https://api.web3forms.com/submit" method="POST">
+                                    <input type="hidden" name="access_key" value="5239e240-a111-40be-9883-9b9eb22ee5ec">
+                                    <input type="hidden" name="subject" value="Callback Request from Simplex Website">
+                                    <input type="hidden" id="interestedProduct" name="interested_product" value="General Inquiry">
+
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Name</label>
+                                        <input type="text" name="name" class="form-control rounded-0" required placeholder="Enter full name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Phone Number</label>
+                                        <input type="tel" name="phone" class="form-control rounded-0" required placeholder="+91 XXXXX XXXXX">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Location / City</label>
+                                        <input type="text" name="location" class="form-control rounded-0" required placeholder="Enter your city or project location">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Message / Note (Optional)</label>
+                                        <textarea name="message" class="form-control rounded-0" rows="3" placeholder="Specify requirements or convenient time to call"></textarea>
+                                    </div>
+                                    <button type="submit" id="submitBtn" class="btn btn-dark w-100 rounded-0 text-uppercase fw-bold py-2" style="letter-spacing: 1px;">Submit Request</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="d-none text-center py-5">
+                        <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
+                        <h5 class="mt-4 fw-bold">Thank You!</h5>
+                        <p class="text-muted">Your details have been received. You will get a callback shortly.</p>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Custom Scripts -->
     <script>
+        // --- BACKGROUND FORM SUBMISSION (No Redirect) ---
+        const callbackForm = document.getElementById('callbackForm');
+        
+        if (callbackForm) {
+            callbackForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.innerHTML = 'Sending...';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(callbackForm);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        document.getElementById('formContainer').classList.add('d-none');
+                        document.getElementById('successMessage').classList.remove('d-none');
+                    } else {
+                        alert("Something went wrong. Please try again.");
+                        submitBtn.innerHTML = 'Submit Request';
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    alert("Something went wrong. Please check your internet and try again.");
+                    submitBtn.innerHTML = 'Submit Request';
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+
+        // --- RESET MODAL ON CLOSE ---
+        const callbackModal = document.getElementById('callbackModal');
+        callbackModal.addEventListener('hidden.bs.modal', function () {
+            document.getElementById('callbackForm').reset();
+            document.getElementById('formContainer').classList.remove('d-none');
+            document.getElementById('successMessage').classList.add('d-none');
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerHTML = 'Submit Request';
+            submitBtn.disabled = false;
+        });
+
         // --- SMOOTH PAGE BLUR SCRIPT ---
         document.addEventListener('DOMContentLoaded', () => {
             const links = document.querySelectorAll('a');
@@ -324,12 +548,10 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     
-                    // Only apply transition to actual internal page links
                     if (href && !href.startsWith('#') && !href.startsWith('http') && !this.hasAttribute('data-bs-toggle')) {
                         e.preventDefault(); 
-                        document.body.classList.add('page-blur-out'); // Trigger the blur class
+                        document.body.classList.add('page-blur-out');
                         
-                        // Wait 500ms before switching pages
                         setTimeout(() => {
                             window.location.href = href;
                         }, 500);
@@ -342,17 +564,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
             
-            // 1. Move underline when a link is clicked
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
-                    // Remove 'active' from all links
                     navLinks.forEach(nav => nav.classList.remove('active'));
-                    // Add 'active' only to the clicked link
                     this.classList.add('active');
                 });
             });
 
-            // 2. Check if the page loaded with a # section (e.g., refreshing on #about-us)
             if (window.location.hash) {
                 const targetLink = document.querySelector(`.navbar-nav .nav-link[href="${window.location.hash}"]`);
                 if (targetLink) {

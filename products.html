@@ -19,17 +19,17 @@
 
         /* Blur Animations applied to the Wrapper instead of Body */
         #page-wrapper {
-            animation: blurIn 0.4s ease-out forwards;
+            animation: blurIn 0.2s ease-out forwards;
         }
 
         .page-blur-out #page-wrapper {
-            animation: blurOut 0.3s ease-in forwards;
+            animation: blurOut 0.2s ease-in forwards;
         }
 
         @keyframes blurIn {
             0% { 
                 opacity: 0;
-                filter: blur(5px); 
+                filter: blur(4px); 
             }
             100% { 
                 opacity: 1;
@@ -44,7 +44,7 @@
             }
             100% { 
                 opacity: 0;
-                filter: blur(5px); 
+                filter: blur(4px); 
             }
         }
         
@@ -179,8 +179,15 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-3 active" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="franchises.html">Franchises</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="index.html#about-us">About Us</a></li>
                     </ul>
+                    <div class="d-flex align-items-center mt-3 mt-lg-0">
+                        <!-- Contact Us Button with Phone Icon -->
+                        <button type="button" class="btn btn-outline-dark rounded-0 px-4 py-2 text-uppercase fw-bold d-flex align-items-center gap-2" style="letter-spacing: 1px; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'General Inquiry';">
+                            <i class="bi bi-telephone-fill"></i> Contact Us
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -232,10 +239,11 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card product-card text-center">
                         <div class="product-img-wrapper">
-                            <img src="assets/window-grid.jpg" alt="Classic Grid Window Frame">
+                            <img src="assets/arch1.jpg" alt="Classic Grid Window Frame">
                         </div>
-                        <h5 class="product-title">Classic Grid Frame</h5>
-                        <p class="text-muted small mb-3">Timeless multi-pane layout. Showcased as a pure structural frame without glass.</p>
+                        <h5 class="product-title">Arch Window</h5>
+                        <p class="text-muted small mb-3">Elegant curved steel layout with dual-arch detailing.
+Engineered as a pure, high-precision structural frame.</p>
                         <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Classic Grid Frame';">Call Now</button>
                     </div>
                 </div>
@@ -243,7 +251,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card product-card text-center">
                         <div class="product-img-wrapper">
-                            <img src="assets/window-arch.jpg" alt="Arched Steel Window">
+                            <img src="assets/cornerwindow.jpg" alt="Arched Steel Window">
                         </div>
                         <h5 class="product-title">Arched Steel Frame</h5>
                         <p class="text-muted small mb-3">Precision-engineered curved layout with preserving details.</p>
@@ -254,7 +262,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card product-card text-center">
                         <div class="product-img-wrapper">
-                            <img src="assets/window-minimal.jpg" alt="Minimalist Window Frame">
+                            <img src="assets/roundwindow.jpg" alt="Minimalist Window Frame">
                         </div>
                         <h5 class="product-title">Minimalist Profile</h5>
                         <p class="text-muted small mb-3">Ultra-slim borders designed for raw, unobstructed structural viewing.</p>
@@ -303,7 +311,6 @@
 
             <!-- SECTION 3: Windows -->
             <h3 class="category-title" id="windows-section">Windows</h3>
-            <!-- Row updated to fit 4 items nicely (using col-lg-3 instead of col-lg-4) -->
             <div class="row" id="windowsRow">
                 <!-- Product 7 -->
                 <div class="col-md-6 col-lg-3">
@@ -357,27 +364,9 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer text-center text-md-start">
+        <footer class="footer text-center">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <h4 class="fw-bold mb-3">SIMPLEX</h4>
-                        <p class="small pe-md-5">We specialize in highly detailed, structural steel windows and doors designed for those who appreciate premium layouts and uncompromising engineering.</p>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <h6>Menu</h6>
-                        <ul class="list-unstyled small">
-                            <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
-                            <li class="mb-2"><a href="products.html" class="text-decoration-none text-muted">Products</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <h6>Connect</h6>
-                        <p class="small mb-1"><i class="bi bi-envelope"></i> design@simplex.com</p>
-                        <p class="small mb-1"><i class="bi bi-telephone"></i> +91 12345 67890</p>
-                    </div>
-                </div>
-                <div class="text-center small mt-4 pt-3 border-top" style="border-color: #f0f0f0 !important;">
+                <div class="small text-muted">
                     &copy; 2026 Simplex. All rights reserved.
                 </div>
             </div>
@@ -386,43 +375,86 @@
     <!-- Closes the page-wrapper -->
     </div>
 
-    <!-- Callback Pop-up Modal (MUST be outside #page-wrapper to prevent CSS blur bug) -->
+    <!-- Callback Pop-up Modal -->
     <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-0">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-0 border-0">
                 <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title fw-bold text-uppercase" id="callbackModalLabel">Request a Callback</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body pt-2">
-                    <p class="small text-muted mb-4" id="formSubtitle">Leave your details and our team will call you to discuss your project.</p>
+                <div class="modal-body p-4 p-md-5">
                     
-                    <form id="callbackForm" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="d5c3d795-3a4f-4f79-bc11-1258b7dd6694">
-                        <input type="hidden" name="Interested_In" id="interestedProduct" value="">
-                        
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold text-muted text-uppercase">Full Name</label>
-                            <input type="text" name="Name" class="form-control rounded-0" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold text-muted text-uppercase">Place / City</label>
-                            <input type="text" name="Place" class="form-control rounded-0" required>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label small fw-bold text-muted text-uppercase">Mobile Number</label>
-                            <input type="tel" name="Mobile" class="form-control rounded-0" required>
-                        </div>
-                        
-                        <button type="submit" id="submitBtn" class="btn btn-dark w-100 rounded-0">Submit Details</button>
-                    </form>
+                    <!-- Form Container -->
+                    <div id="formContainer">
+                        <div class="row g-4">
+                            <!-- Left Side: Contact Info & WhatsApp -->
+                            <div class="col-md-5 border-end-md pe-md-4 d-flex flex-column">
+                                <div>
+                                    <h4 class="fw-bold text-uppercase mb-3" style="color: #111; letter-spacing: 1px;">Get In Touch</h4>
+                                    <p class="text-muted small mb-4">Speak directly with our team or drop us an email regarding your project requirements.</p>
+                                    
+                                    <div class="mb-3">
+                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Phone Call</span>
+                                        <a href="tel:+917510800577" class="text-decoration-none fw-bold text-dark fs-6">+91 75108 00577</a>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Email Inquiry</span>
+                                        <a href="mailto:design@simplex.com" class="text-decoration-none fw-bold text-dark fs-6">design@simplex.com</a>
+                                    </div>
+                                </div>
 
-                    <!-- Success Message (Hidden by default) -->
-                    <div id="successMessage" class="d-none text-center py-4">
-                        <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
-                        <h5 class="mt-3 fw-bold">Thank You!</h5>
+                                <!-- WhatsApp Button Section -->
+                                <div class="mt-4 pt-4 border-top">
+                                    <span class="text-uppercase text-muted small fw-bold d-block mb-2">Instant Chat</span>
+                                    
+                                    <!-- PASTE YOUR WHATSAPP LINK IN THE href BELOW -->
+                                    <a href="https://wa.link/3ytl2k" target="_blank" class="btn w-100 rounded-0 text-uppercase fw-bold py-2 d-flex justify-content-center align-items-center gap-2 text-white" style="letter-spacing: 1px; background-color: #25D366; border-color: #25D366;">
+                                        <i class="bi bi-whatsapp fs-5"></i> WhatsApp Now
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <!-- Right Side: Request Callback Form -->
+                            <div class="col-md-7 ps-md-4">
+                                <h4 class="fw-bold text-uppercase mb-2" style="color: #111; letter-spacing: 1px;">Request A Callback</h4>
+                                <p class="text-muted small mb-4">Fill out the form below and our design expert will get back to you shortly.</p>
+                                
+                                <form id="callbackForm" action="https://api.web3forms.com/submit" method="POST">
+                                    <input type="hidden" name="access_key" value="d5c3d795-3a4f-4f79-bc11-1258b7dd6694">
+                                    <input type="hidden" name="subject" value="Callback Request from Simplex Products Page">
+                                    <input type="hidden" id="interestedProduct" name="interested_product" value="General Inquiry">
+
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Name</label>
+                                        <input type="text" name="name" class="form-control rounded-0" required placeholder="Enter full name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Phone Number</label>
+                                        <input type="tel" name="phone" class="form-control rounded-0" required placeholder="+91 XXXXX XXXXX">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Location / City</label>
+                                        <input type="text" name="location" class="form-control rounded-0" required placeholder="Enter your city or project location">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Message / Note (Optional)</label>
+                                        <textarea name="message" class="form-control rounded-0" rows="3" placeholder="Specify requirements or convenient time to call"></textarea>
+                                    </div>
+                                    <button type="submit" id="submitBtn" class="btn btn-dark w-100 rounded-0 text-uppercase fw-bold py-2" style="letter-spacing: 1px;">Submit Request</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="d-none text-center py-5">
+                        <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
+                        <h5 class="mt-4 fw-bold">Thank You!</h5>
                         <p class="text-muted">Your details have been received. You will get a callback shortly.</p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -437,7 +469,7 @@
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.key === 'q') {
                 const pin = prompt("Enter Admin PIN to unlock the product generator:");
-                if (pin === "1234") { 
+                if (pin === "nonever@14") { 
                     document.getElementById('adminPanel').classList.remove('d-none');
                 }
             }
@@ -451,7 +483,6 @@
             const desc = document.getElementById('newProdDesc').value;
             const imageFilename = document.getElementById('newProdImage').value;
 
-            // Notice: Updated this to col-lg-3 so new products match the 4-card row!
             const cardHTML = `
 <!-- New Product: ${name} -->
 <div class="col-md-6 col-lg-3">
@@ -465,15 +496,14 @@
     </div>
 </div>`;
 
-            // 1. Show the code in the text box for GitHub pushing
+            // Show the code for GitHub pushing
             const outputBox = document.getElementById('codeOutputBox');
             const textArea = document.getElementById('generatedCode');
-            
             outputBox.classList.remove('d-none');
             textArea.value = cardHTML.trim();
             textArea.select();
 
-            // 2. Inject it live into the new Windows section for preview
+            // Inject it live into the new Windows section for preview
             const windowsRow = document.getElementById('windowsRow');
             windowsRow.insertAdjacentHTML('afterbegin', cardHTML);
         });
@@ -489,10 +519,8 @@
                 submitBtn.innerHTML = 'Sending...';
                 submitBtn.disabled = true;
 
-                // Gather the form data
                 const formData = new FormData(callbackForm);
 
-                // Send data to Web3Forms in the background
                 fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
@@ -500,18 +528,17 @@
                 .then(async (response) => {
                     let json = await response.json();
                     if (response.status == 200) {
-                        callbackForm.classList.add('d-none');
-                        document.getElementById('formSubtitle').classList.add('d-none');
+                        document.getElementById('formContainer').classList.add('d-none');
                         document.getElementById('successMessage').classList.remove('d-none');
                     } else {
                         alert("Something went wrong. Please try again.");
-                        submitBtn.innerHTML = 'Submit Details';
+                        submitBtn.innerHTML = 'Submit Request';
                         submitBtn.disabled = false;
                     }
                 })
                 .catch(error => {
                     alert("Something went wrong. Please check your internet and try again.");
-                    submitBtn.innerHTML = 'Submit Details';
+                    submitBtn.innerHTML = 'Submit Request';
                     submitBtn.disabled = false;
                 });
             });
@@ -521,12 +548,11 @@
         const callbackModal = document.getElementById('callbackModal');
         callbackModal.addEventListener('hidden.bs.modal', function () {
             document.getElementById('callbackForm').reset();
-            document.getElementById('callbackForm').classList.remove('d-none');
-            document.getElementById('formSubtitle').classList.remove('d-none');
+            document.getElementById('formContainer').classList.remove('d-none');
             document.getElementById('successMessage').classList.add('d-none');
             
             const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerHTML = 'Submit Details';
+            submitBtn.innerHTML = 'Submit Request';
             submitBtn.disabled = false;
         });
 
@@ -538,10 +564,9 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     
-                    // Only apply transition to actual internal page links
                     if (href && !href.startsWith('#') && !href.startsWith('http') && !this.hasAttribute('data-bs-toggle')) {
                         e.preventDefault(); 
-                        document.body.classList.add('page-blur-out'); // Trigger the blur class
+                        document.body.classList.add('page-blur-out'); 
                         
                         setTimeout(() => {
                             window.location.href = href;

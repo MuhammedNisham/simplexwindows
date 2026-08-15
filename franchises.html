@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Franchises - Simplex Premium Steel</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        /* Core Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa; 
+        }
+        
+        /* Blur Animations */
+        #page-wrapper {
+            animation: blurIn 0.4s ease-out forwards;
+        }
+        .page-blur-out #page-wrapper {
+            animation: blurOut 0.3s ease-in forwards;
+        }
+
+        @keyframes blurIn {
+            0% { opacity: 0; filter: blur(5px); }
+            100% { opacity: 1; filter: blur(0px); }
+        }
+        @keyframes blurOut {
+            0% { opacity: 1; filter: blur(0px); }
+            100% { opacity: 0; filter: blur(5px); }
+        }
+
+        /* Scrolling Marquee */
+        .marquee-container {
+            background-color: #ffffff;
+            color: #111;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid #f0f0f0;
+            width: 100%; /* Ensures container spans full width */
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            padding-right: 50px; /* Adds a little breathing room at the end of the text */
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100vw); } /* Changed 100% to 100vw to start off-screen right */
+            100% { transform: translateX(-100%); } /* Keeps -100% to scroll fully off-screen left */
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0; 
+        }
+        .navbar-brand, .nav-link {
+            color: #111 !important; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .nav-link.active {
+            border-bottom: 2px solid #111;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 60px 0 30px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            color: #111;
+        }
+
+        /* Franchise Cards */
+        .franchise-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .franchise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+        }
+        
+        /* Map Container for Horizontal Layout */
+        .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 280px; 
+            background-color: #e9ecef;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            min-height: inherit;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #ffffff;
+            color: #555;
+            padding: 30px 0;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Marquee Announcement Bar -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="bi bi-list text-dark fs-2"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 active" href="franchises.html">Franchises</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="index.html#about-us">About Us</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center mt-3 mt-lg-0">
+                        <button type="button" class="btn btn-outline-dark rounded-0 px-4 py-2 text-uppercase fw-bold d-flex align-items-center gap-2" style="letter-spacing: 1px; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Franchise Inquiry';">
+                            <i class="bi bi-telephone-fill"></i> Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1>Our Franchises</h1>
+                <p class="text-muted mt-3">Find a certified Simplex dealer and experience our premium steel quality across India.</p>
+                <div style="width: 50px; height: 3px; background-color: #111; margin: 20px auto 0;"></div>
+            </div>
+        </header>
+
+        <!-- Franchise Generator Automation (Hidden by default) -->
+        <section id="adminPanel" class="container mt-4 mb-5 p-4 d-none" style="background-color: #f8f9fa; border: 1px dashed #ccc;">
+            <h4 class="text-uppercase mb-4 fw-bold" style="font-size: 1.2rem;">+ Generate Franchise Code (For GitHub)</h4>
+            <form id="franchiseGeneratorForm">
+                <div class="row align-items-end g-3">
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Franchise Name</label>
+                        <input type="text" class="form-control rounded-0" id="newFranName" required placeholder="e.g. Simplex Central - Bhopal">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Role / Title</label>
+                        <input type="text" class="form-control rounded-0" id="newFranRole" required placeholder="e.g. Authorized Dealer">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Email</label>
+                        <input type="email" class="form-control rounded-0" id="newFranEmail" required placeholder="e.g. bhopal@simplex.com">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Phone</label>
+                        <input type="text" class="form-control rounded-0" id="newFranPhone" required placeholder="e.g. +91 98765 43210">
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Full Address</label>
+                        <input type="text" class="form-control rounded-0" id="newFranAddress" required placeholder="e.g. 12, Industrial Area, Bhopal, MP - 462001 (use <br> for new lines)">
+                    </div>
+                    <div class="col-md-10">
+                        <label class="form-label small fw-bold text-muted text-uppercase">Google Maps Embed URL (src link only)</label>
+                        <input type="text" class="form-control rounded-0" id="newFranMap" required placeholder="e.g. https://www.google.com/maps/embed?pb=...">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-dark w-100 rounded-0">Generate</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div id="codeOutputBox" class="mt-4 d-none">
+                <label class="form-label small fw-bold text-success text-uppercase">Copy this code and paste it ANYWHERE inside the main franchise row. It will auto-sort!</label>
+                <textarea id="generatedCode" class="form-control" rows="12" readonly style="font-family: monospace; font-size: 0.85rem;"></textarea>
+            </div>
+        </section>
+
+        <!-- Franchise Locations Section (Auto-Sorted by JS) -->
+        <section class="container mb-5">
+            <div class="row g-4" id="franchiseRow">
+                
+                
+                <!-- New Franchise: SIMPLEX WINDOWS AND DOORS  -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">J.J SIMPLEX WINDOWS AND DOORS </h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>Kongad, Kottassery, <br> Palakkad, Kerala - 678631</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:j.jsimplexkongad@gmail.com" class="text-decoration-none text-dark">j.jsimplexkongad@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+918590591776+919526970442" class="text-decoration-none text-dark">+91 85905 91776 <br> +91 95269 70442</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.3352367941757!2d76.4973383!3d10.862086699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8792bc42b4373%3A0x4df2e1122db41b0d!2sSimplex%20Windows%20And%20Doors%20-%20Steel%20Windows%20and%20doors%20Shop!5e0!3m2!1sen!2sin!4v1786797024046!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- New Franchise: AS SIMPLEX -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">AS SIMPLEX</h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>As simplex windows and doors <br> Chanthavila, Kattayikonam(PO)<br> Trivandrum Kerala - 695584 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:assimplex@gmail.com" class="text-decoration-none text-dark">assimplex@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+919895023197+919895023194" class="text-decoration-none text-dark">+91 98950 23197<br> +91 98950 23194</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.05616470345!2d76.88249189999999!3d8.5905988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bf00126d1295%3A0x60e08ae0ffa0cf68!2sSimplex%20steel%20windows%20and%20Doors!5e0!3m2!1sen!2sin!4v1786797436766!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- New Franchise: MULAKKAL TRADING  -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">MULAKKAL TRADING </h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>Srk nagar, Ottapalam <br> Palakkad, Kerala - 679103</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:mulakkalshareef123@gmail.com" class="text-decoration-none text-dark">mulakkalshareef123@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+919744486808+918089776752" class="text-decoration-none text-dark">+91 97444 86808<br> +91 80897 76752</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.519155313287!2d76.3936777!3d10.7714929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d9cfa2f2b4a1%3A0xecc9290473561fda!2sMulakkal%20doors%20and%20windows!5e0!3m2!1sen!2sin!4v1786797804440!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- New Franchise: SIMPLEX WINDOWS AND DOORS CHAVAKKAD  -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">SIMPLEX WINDOWS AND DOORS CHAVAKKAD </h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>Simplex windows and doors, Near block panchyath office Manathala <br> Chavakkad, Thrissur kerala - 680506 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:simplexchavakkad@gmail.com" class="text-decoration-none text-dark">simplexchavakkad@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+919544554588+919961430502" class="text-decoration-none text-dark">+91 95445 54588<br> +91 99614 30502</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.9364625402845!2d76.0155867!3d10.5841408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba795a2f0f69675%3A0xeedfa29db3ea1b8e!2sSIMPLEX%20WINDOWS%20AND%20DOORS!5e0!3m2!1sen!2sin!4v1786798371407!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- New Franchise: DOORLAND GROUP KODAKARA  -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">DOORLAND GROUP KODAKARA </h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>Room number , Vazhiyambalam, 17/527 k,<br> Kodakara, Thrissur, Kerala - 680684</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:dlgkodakara@gmail.com" class="text-decoration-none text-dark">dlgkodakara@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+917994699631+918943099631" class="text-decoration-none text-dark">+91 79946 99631<br>+91 89430 99631</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.726233513244!2d76.298073!3d10.363760899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f90954b2d56b%3A0x40f8b35ee6e2ad95!2sDoorland%20Group%20Kodakara!5e0!3m2!1sen!2sin!4v1786798638242!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- New Franchise: DK DOORS & WINDOWS -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">DK DOORS & WINDOWS</h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>Priyadarshini Bus Stop, Karikkad PO, <br>Korattikkara, Perumbilavu, Thrissur, Kerala - 680519</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:info.dktradings@gmail.com" class="text-decoration-none text-dark">info.dktradings@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+919567047711+919567045511" class="text-decoration-none text-dark">+91 95670 47711<br>+91 95670 45511</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.348537693375!2d76.0890668!3d10.707577200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7bf6912815459%3A0x456a8ff9392a8d96!2sDK%20Doors%20And%20Windows%20(DK%20Trading)!5e0!3m2!1sen!2sin!4v1786798845662!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- New Franchise: DK DOORS & WINDOWS -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">DK DOORS & WINDOWS</h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>New Bazar, Koottanad PO <br> Koottanad, Palakkad, Kerala - 679533</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:info.dktradings@gmail.com" class="text-decoration-none text-dark">info.dktradings@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+919567045511+919567047711" class="text-decoration-none text-dark">+91 95670 45511<br> +91 95670 47711</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.7077664749086!2d76.1155783!3d10.756990700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c79631f51317%3A0xcf3cfb6d7fa9b9ec!2sDK%20Doors%20%26%20Windows!5e0!3m2!1sen!2sin!4v1786798999722!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- New Franchise: DOORLAND OLLUR  -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">DOORLAND OLLUR </h4>
+                    <p class="text-muted small mb-4 fw-bold">Authorized Dealer</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>Doorland group, Kadavi davy memmorial shopping comple<BR>, cheerachi, ollur, thrissur, kerala - 680306</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:doorlanddoor@gmail.com" class="text-decoration-none text-dark">doorlanddoor@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:+919037499631+918943299631" class="text-decoration-none text-dark">+91 90374 99631<br>+91 89432 99631</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.137257271076!2d76.2329752!3d10.489844399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f152c6bf4595%3A0x53d2a1c77345d763!2sDOORLAND%20GROUP!5e0!3m2!1sen!2sin!4v1786799180902!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            </div>
+        </section>
+
+        <!-- Minimal Footer -->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="small text-muted">
+                    &copy; 2026 Simplex. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+    </div> 
+    <!-- END OF PAGE CONTENT WRAPPER -->
+
+    <!-- Contact & Request Callback Modal -->
+    <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-0 border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    
+                    <!-- Form Container -->
+                    <div id="formContainer">
+                        <div class="row g-4">
+                            <!-- Left Side -->
+                            <div class="col-md-5 border-end-md pe-md-4 d-flex flex-column">
+                                <div>
+                                    <h4 class="fw-bold text-uppercase mb-3" style="color: #111; letter-spacing: 1px;">Get In Touch</h4>
+                                    <p class="text-muted small mb-4">Speak directly with our team or drop us an email regarding your project requirements.</p>
+                                    
+                                    <div class="mb-3">
+                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Phone Call</span>
+                                        <a href="tel:+917510800577" class="text-decoration-none fw-bold text-dark fs-6">+91 75108 00577</a>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Email Inquiry</span>
+                                        <a href="mailto:design@simplex.com" class="text-decoration-none fw-bold text-dark fs-6">design@simplex.com</a>
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp Button -->
+                                <div class="mt-4 pt-4 border-top">
+                                    <a href="https://wa.link/3ytl2k" target="_blank" class="btn w-100 rounded-0 text-uppercase fw-bold py-2 d-flex justify-content-center align-items-center gap-2 text-white" style="letter-spacing: 1px; background-color: #25D366; border-color: #25D366;">
+                                        <i class="bi bi-whatsapp fs-5"></i> WhatsApp Now
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right Side Form -->
+                            <div class="col-md-7 ps-md-4">
+                                <h4 class="fw-bold text-uppercase mb-2" style="color: #111; letter-spacing: 1px;">Request A Callback</h4>
+                                <p class="text-muted small mb-4">Fill out the form below and our design expert will get back to you shortly.</p>
+                                
+                                <form id="callbackForm" action="https://api.web3forms.com/submit" method="POST">
+                                    <!-- Use your specific web3forms access key below -->
+                                    <input type="hidden" name="access_key" value="5239e240-a111-40be-9883-9b9eb22ee5ec">
+                                    <input type="hidden" name="subject" value="Callback Request from Simplex Franchises Page">
+                                    <input type="hidden" id="interestedProduct" name="interested_product" value="General Inquiry">
+
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Name</label>
+                                        <input type="text" name="name" class="form-control rounded-0" required placeholder="Enter full name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Phone Number</label>
+                                        <input type="tel" name="phone" class="form-control rounded-0" required placeholder="+91 XXXXX XXXXX">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Location / City</label>
+                                        <input type="text" name="location" class="form-control rounded-0" required placeholder="Enter your city or project location">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label small fw-bold text-muted text-uppercase">Message / Note (Optional)</label>
+                                        <textarea name="message" class="form-control rounded-0" rows="3" placeholder="Specify requirements or convenient time to call"></textarea>
+                                    </div>
+                                    <button type="submit" id="submitBtn" class="btn btn-dark w-100 rounded-0 text-uppercase fw-bold py-2" style="letter-spacing: 1px;">Submit Request</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="d-none text-center py-5">
+                        <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
+                        <h5 class="mt-4 fw-bold">Thank You!</h5>
+                        <p class="text-muted">Your details have been received. You will get a callback shortly.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // --- 0. AUTO-SORTING FUNCTION (Sorts entirely by the main heading text) ---
+        function sortFranchises() {
+            const container = document.getElementById('franchiseRow');
+            if (!container) return;
+            
+            // Get all franchise items
+            const cards = Array.from(container.getElementsByClassName('franchise-item'));
+            
+            // Sort them alphabetically based on the main heading text
+            cards.sort((a, b) => {
+                let titleA = a.querySelector('.franchise-title').innerText.trim().toLowerCase();
+                let titleB = b.querySelector('.franchise-title').innerText.trim().toLowerCase();
+                
+                // If the heading includes " - " (like "Simplex South - Bengaluru"), 
+                // split it and use ONLY the city part for perfect A-to-Z sorting.
+                if (titleA.includes('-')) titleA = titleA.split('-').pop().trim();
+                if (titleB.includes('-')) titleB = titleB.split('-').pop().trim();
+                
+                return titleA.localeCompare(titleB);
+            });
+            
+            // Re-append them in the newly sorted order
+            cards.forEach(card => container.appendChild(card));
+        }
+
+        // Run the sort automatically when the page loads
+        document.addEventListener('DOMContentLoaded', sortFranchises);
+
+        // --- 1. SECRET ADMIN LOGIN ---
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'q') {
+                const pin = prompt("Enter Admin PIN to unlock the franchise generator:");
+                if (pin === "1234") { 
+                    document.getElementById('adminPanel').classList.remove('d-none');
+                }
+            }
+        });
+
+        // --- 2. GENERATE HTML CODE FOR GITHUB AND LIVE PREVIEW ---
+        const franchiseForm = document.getElementById('franchiseGeneratorForm');
+        if(franchiseForm) {
+            franchiseForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('newFranName').value;
+                const role = document.getElementById('newFranRole').value;
+                const email = document.getElementById('newFranEmail').value;
+                const phone = document.getElementById('newFranPhone').value;
+                const address = document.getElementById('newFranAddress').value;
+                const mapSrc = document.getElementById('newFranMap').value;
+
+                // Clean phone number for the tel: link
+                const phoneClean = phone.trim().replace(/[^+\d]/g, '');
+
+                const cardHTML = `
+<!-- New Franchise: ${name} -->
+<div class="col-12 franchise-item">
+    <div class="card franchise-card shadow-sm">
+        <div class="row g-0 h-100">
+            <!-- Details Side -->
+            <div class="col-md-7 col-lg-8 d-flex align-items-center">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="fw-bold text-uppercase mb-1 franchise-title" style="letter-spacing: 1px;">${name}</h4>
+                    <p class="text-muted small mb-4 fw-bold">${role}</p>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5 me-3 mt-1"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Address</span>
+                                    <span>${address}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-envelope-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Email</span>
+                                    <a href="mailto:${email.trim()}" class="text-decoration-none text-dark">${email.trim()}</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-telephone-fill text-dark fs-5 me-3"></i>
+                                <div>
+                                    <span class="d-block text-uppercase small text-muted fw-bold">Phone</span>
+                                    <a href="tel:${phoneClean}" class="text-decoration-none text-dark">${phone.trim()}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Side -->
+            <div class="col-md-5 col-lg-4">
+                <div class="map-container">
+                    <iframe src="${mapSrc}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`;
+
+                // Show the code for GitHub pushing
+                const outputBox = document.getElementById('codeOutputBox');
+                const textArea = document.getElementById('generatedCode');
+                outputBox.classList.remove('d-none');
+                textArea.value = cardHTML.trim();
+                textArea.select();
+
+                // Inject it live into the grid
+                const franchiseRow = document.getElementById('franchiseRow');
+                franchiseRow.insertAdjacentHTML('beforeend', cardHTML);
+                
+                // Immediately re-sort the grid so the new entry jumps to its correct alphabetical spot!
+                sortFranchises();
+            });
+        }
+
+        // --- 3. BACKGROUND FORM SUBMISSION (No Redirect) ---
+        const callbackForm = document.getElementById('callbackForm');
+        
+        if (callbackForm) {
+            callbackForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.innerHTML = 'Sending...';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(callbackForm);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        document.getElementById('formContainer').classList.add('d-none');
+                        document.getElementById('successMessage').classList.remove('d-none');
+                    } else {
+                        alert("Something went wrong. Please try again.");
+                        submitBtn.innerHTML = 'Submit Request';
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    alert("Something went wrong. Please check your internet and try again.");
+                    submitBtn.innerHTML = 'Submit Request';
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+
+        // --- 4. RESET MODAL ON CLOSE ---
+        const callbackModal = document.getElementById('callbackModal');
+        if(callbackModal) {
+            callbackModal.addEventListener('hidden.bs.modal', function () {
+                document.getElementById('callbackForm').reset();
+                document.getElementById('formContainer').classList.remove('d-none');
+                document.getElementById('successMessage').classList.add('d-none');
+                
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.innerHTML = 'Submit Request';
+                submitBtn.disabled = false;
+            });
+        }
+
+        // --- 5. SMOOTH PAGE BLUR SCRIPT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href && !href.startsWith('#') && !href.startsWith('http') && !this.hasAttribute('data-bs-toggle') && href !== 'mailto:' && href !== 'tel:') {
+                        e.preventDefault(); 
+                        document.body.classList.add('page-blur-out');
+                        
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 400); 
+                    }
+                });
+            });
+        });
+
+        // --- 6. DYNAMIC ACTIVE NAV UNDERLINE ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if(!this.getAttribute('href').startsWith('#')) {
+                        navLinks.forEach(nav => nav.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            if (window.location.hash) {
+                const targetLink = document.querySelector(`.navbar-nav .nav-link[href="${window.location.hash}"]`);
+                if (targetLink) {
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    targetLink.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
