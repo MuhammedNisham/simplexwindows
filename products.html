@@ -1,1047 +1,841 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Simplex Premium Steel</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="shortcut icon" href="assets/LOGO.ico" type="image/x-icon">
-    
-    <style>
-        /* Core Styling */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-        }
-
-        /* Blur Animations applied to the Wrapper instead of Body */
-        #page-wrapper {
-            animation: blurIn 0.2s ease-out forwards;
-        }
-
-        .page-blur-out #page-wrapper {
-            animation: blurOut 0.2s ease-in forwards;
-        }
-
-        @keyframes blurIn {
-            0% { 
-                opacity: 0;
-                filter: blur(4px); 
-            }
-            100% { 
-                opacity: 1;
-                filter: blur(0px); 
-            }
-        }
-
-        @keyframes blurOut {
-            0% { 
-                opacity: 1;
-                filter: blur(0px); 
-            }
-            100% { 
-                opacity: 0;
-                filter: blur(4px); 
-            }
-        }
-        
-        /* Navbar */
-        .navbar {
-            background-color: #ffffff;
-            padding: 15px 0;
-            border-bottom: 1px solid #f0f0f0; 
-        }
-        .navbar-brand, .nav-link {
-            color: #111 !important; 
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        .nav-link.active {
-            border-bottom: 2px solid #111;
-        }
-        
-        /* Scrolling Marquee */
-        .marquee-container {
-            background-color: #ffffff;
-            color: #111;
-            padding: 12px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 25s linear infinite;
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            font-weight: 500;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Page Header */
-        .page-header {
-            padding: 80px 0 40px;
-            background-color: #ffffff;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 2.5rem;
-            color: #111;
-        }
-        
-        /* Product Grid Styling */
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-bottom: 1px solid #111;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            margin-top: 50px;
-        }
-        .product-card {
-            border: none;
-            background: transparent;
-            margin-bottom: 40px;
-        }
-        .product-img-wrapper {
-            height: 400px;
-            overflow: hidden;
-            background-color: #f8f9fa;
-            position: relative;
-        }
-        .product-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .product-card:hover .product-img-wrapper img {
-            transform: scale(1.08);
-        }
-        .product-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-top: 20px;
-            color: #111;
-            text-transform: uppercase;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: #ffffff;
-            color: #555;
-            padding: 60px 0 30px;
-            border-top: 1px solid #f0f0f0;
-            margin-top: 60px;
-        }
-        .footer h6, .footer h4 {
-            color: #111;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Main Content Wrapper (Applies blur here, not on the body) -->
-    <div id="page-wrapper">
-        
-        <!-- Marquee Announcement Bar -->
-        <div class="marquee-container">
-            <div class="marquee-content">
-                SIMPLEX STEEL WINDOWS & DOORS • HYPER-REALISTIC PRECISION • COMMERCIAL & RESIDENTIAL PROJECTS • 
-            </div>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg sticky-top">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="assets/simplex12.png" alt="Simplex Logo" height="40" style="transform: scale(1.8); transform-origin: left center; position: relative; z-index: 1050;">
-                </a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <i class="bi bi-list text-dark fs-2"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-3 active" href="products.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="franchises.html">Franchises</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="index.html#about-us">About Us</a></li>
-                    </ul>
-                    <div class="d-flex align-items-center mt-3 mt-lg-0">
-                        <!-- Contact Us Button with Phone Icon -->
-                        <button type="button" class="btn btn-outline-dark rounded-0 px-4 py-2 text-uppercase fw-bold d-flex align-items-center gap-2" style="letter-spacing: 1px; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'General Inquiry';">
-                            <i class="bi bi-telephone-fill"></i> Contact Us
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Page Header -->
-        <header class="page-header">
-            <div class="container">
-                <h1>Our Collection</h1>
-                <p class="text-muted mt-3">Explore our hyper-realistic structural frames and commercial-grade layouts.</p>
-            </div>
-        </header>
-
-        <!-- Product Generator Automation (Hidden by default) -->
-        <section id="adminPanel" class="container mt-4 mb-5 p-4 d-none" style="background-color: #f8f9fa; border: 1px dashed #ccc;">
-            <h4 class="text-uppercase mb-4 fw-bold" style="font-size: 1.2rem;">+ Generate Product Code (For GitHub)</h4>
-            <form id="productGeneratorForm">
-                <div class="row align-items-end">
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label small fw-bold text-muted text-uppercase">Product Name</label>
-                        <input type="text" class="form-control rounded-0" id="newProdName" required placeholder="e.g. Slimline French Door">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label small fw-bold text-muted text-uppercase">Description</label>
-                        <input type="text" class="form-control rounded-0" id="newProdDesc" required placeholder="e.g. Minimalist layout with heavy-duty tracking.">
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label small fw-bold text-muted text-uppercase">Image Filename</label>
-                        <input type="text" class="form-control rounded-0" id="newProdImage" required placeholder="e.g. door-new.jpg">
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <button type="submit" class="btn btn-dark w-100 rounded-0">Generate Code</button>
-                    </div>
-                </div>
-            </form>
-            
-            <div id="codeOutputBox" class="mt-3 d-none">
-                <label class="form-label small fw-bold text-success text-uppercase">Copy this code and paste it into products.html inside the Windows section.</label>
-                <textarea id="generatedCode" class="form-control" rows="8" readonly style="font-family: monospace; font-size: 0.9rem;"></textarea>
-            </div>
-        </section>
-
-        <!-- Full Product Grid Section -->
-        <section class="container mb-5">
-            
-            <!-- SECTION 1: Featured Products -->
-            <h3 class="category-title">Featured Products</h3>
-            <div class="row">
-                <!-- Product 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card product-card text-center">
-                        <div class="product-img-wrapper">
-                            <img src="assets/windows/archwindow1.jpg" alt="Classic Grid Window Frame">
-                        </div>
-                        <h5 class="product-title">Arch Window</h5>
-                        <p class="text-muted small mb-3">Arched four-paneled Simplex window featuring horizontal slats and central double doors.</p>
-                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Classic Grid Frame';">Call Now</button>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card product-card text-center">
-                        <div class="product-img-wrapper">
-                            <img src="assets/windows/cornerwindow1.jpg" alt="Arched Steel Window">
-                        </div>
-                        <h5 class="product-title">CORNER WINDOW</h5>
-                        <p class="text-muted small mb-3">four-paneled Simplex corner window featuring a 90-degree angled design and horizontal slats.</p>
-                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Arched Steel Frame';">Call Now</button>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card product-card text-center">
-                        <div class="product-img-wrapper">
-                            <img src="assets/windows/roundwindow.jpg" alt="Minimalist Window Frame">
-                        </div>
-                        <h5 class="product-title">ROUND WINDOW</h5>
-                        <p class="text-muted small mb-3">Round double-paneled Simplex window featuring horizontal slats and center hinges.</p>
-                        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Minimalist Profile';">Call Now</button>
-                    </div>
-                </div>
-            </div>
-
-           
-
-            <!-- SECTION 2: Windows -->
-            <h3 class="category-title" id="windows-section">Windows</h3>
-            <div class="row" id="windowsRow">
-                <!-- Product 7 -->
-                <!-- New Product: 1 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w1.1.jpg" alt="1 panel window">
-        </div>
-        <h5 class="product-title">1 panel window</h5>
-        <p class="text-muted small mb-3">Tall, Simplex louvered window with horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel window';">Call Now</button>
-    </div>
-</div>
-                
-                <!-- New Product: 1 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w1.2.jpg" alt="1 panel window">
-        </div>
-        <h5 class="product-title">1 panel window</h5>
-        <p class="text-muted small mb-3">Simplex louvered window with thin horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel window';">Call Now</button>
-    </div>
-</div>
-
-               <!-- New Product: 1 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w1.3.jpg" alt="1 panel window">
-        </div>
-        <h5 class="product-title">1 panel window</h5>
-        <p class="text-muted small mb-3">Simplex window with three vertical metallic bars and a central horizontal crossbar.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel window';">Call Now</button>
-    </div>
-</div>
-
-                <!-- New Product: 1 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w1.4.jpg" alt="1 panel window">
-        </div>
-        <h5 class="product-title">1 panel window</h5>
-        <p class="text-muted small mb-3">Simplex window split into two hinged sections, both featuring thin horizontal metallic bars.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 Panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w2.1.jpg" alt="2 Panel Window">
-        </div>
-        <h5 class="product-title">2 Panel Window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with a grid top and louvered bottom.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 Panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 Panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w2.2.jpg" alt="2 Panel Window">
-        </div>
-        <h5 class="product-title">2 Panel Window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with horizontal louvered slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 Panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w2.3.jpg" alt="2 panel window">
-        </div>
-        <h5 class="product-title">2 panel window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with thin horizontal metallic bars.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 panel window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 Panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w2.4.jpg" alt="2 Panel Window">
-        </div>
-        <h5 class="product-title">2 Panel Window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with a rectangular grid design.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 Panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w3.1.jpg" alt="3 panel Window">
-        </div>
-        <h5 class="product-title">3 panel Window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with slatted upper sections and louvered bottoms.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w3.2.jpg" alt="3 panel Window">
-        </div>
-        <h5 class="product-title">3 panel Window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with horizontal louvered slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w3.3.jpg" alt="3 panel Window">
-        </div>
-        <h5 class="product-title">3 panel Window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with horizontal slats and a split center section.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w3.4.jpg" alt="3 panel Window">
-        </div>
-        <h5 class="product-title">3 panel Window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with a full square grid design.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel Window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w3.5.jpg" alt="3 panel Window">
-        </div>
-        <h5 class="product-title">3 panel Window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel Window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 4 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w4.1.jpg" alt="4 panel window">
-        </div>
-        <h5 class="product-title">4 panel window</h5>
-        <p class="text-muted small mb-3">Four-paneled Simplex window with horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '4 panel window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 4 panel window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/w4.2.jpg" alt="4 panel window">
-        </div>
-        <h5 class="product-title">4 panel window</h5>
-        <p class="text-muted small mb-3">Four-paneled Simplex window with horizontal slats and split center sections.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '4 panel window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: i max window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/imax.jpg" alt="i max window">
-        </div>
-        <h5 class="product-title">i max window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with horizontal slats and two open frames.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'i max window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: sliding window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/slidingwindow.jpg" alt="sliding window">
-        </div>
-        <h5 class="product-title">sliding window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex sliding window with horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'sliding window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 1 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw1.1.jpg" alt="1 panel french window">
-        </div>
-        <h5 class="product-title">1 panel french window</h5>
-        <p class="text-muted small mb-3">Simplex window divided into three vertically stacked sections, all featuring horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 1 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw1.2.jpg" alt="1 panel french window">
-        </div>
-        <h5 class="product-title">1 panel french window</h5>
-        <p class="text-muted small mb-3">Single-paneled Simplex window featuring thin horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 1 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw1.3.jpg" alt="1 panel french window">
-        </div>
-        <h5 class="product-title">1 panel french window</h5>
-        <p class="text-muted small mb-3">Single-paneled Simplex window with a slatted upper section and a louvered bottom.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 1 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw1.4.jpg" alt="1 panel french window">
-        </div>
-        <h5 class="product-title">1 panel french window</h5>
-        <p class="text-muted small mb-3">Simplex window featuring a slatted upper section and a separate louvered bottom panel.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 1 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw1.5.jpg" alt="1 panel french window">
-        </div>
-        <h5 class="product-title">1 panel french window</h5>
-        <p class="text-muted small mb-3">Single-paneled Simplex window with a full square grid design.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw2.1.jpg" alt="2 panel french window">
-        </div>
-        <h5 class="product-title">2 panel french window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with horizontal louvered slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw2.2.jpg" alt="2 panel french window">
-        </div>
-        <h5 class="product-title">2 panel french window</h5>
-        <p class="text-muted small mb-3">Simplex window split into upper and lower hinged sections, featuring horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw2.3.jpg" alt="2 panel french window">
-        </div>
-        <h5 class="product-title">2 panel french window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with slatted upper sections and louvered bottom panels.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw3.1.jpg" alt="3 panel french window">
-        </div>
-        <h5 class="product-title">3 panel french window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw3.2.jpg" alt="3 panel french window">
-        </div>
-        <h5 class="product-title">3 panel french window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window featuring vertical bars and a horizontal divider.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw3.3.jpg" alt="3 panel french window">
-        </div>
-        <h5 class="product-title">3 panel french window</h5>
-        <p class="text-muted small mb-3">Simplex window with horizontal slats and a center section divided into three stacked panels.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 4 panel french window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/fw4.1.jpg" alt="4 panel french window">
-        </div>
-        <h5 class="product-title">4 panel french window</h5>
-        <p class="text-muted small mb-3">Four-paneled Simplex window with slatted upper sections and louvered bottom panels.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '4 panel french window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 1 panel kitchen window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/kw1.1.jpg" alt="1 panel kitchen window">
-        </div>
-        <h5 class="product-title">1 panel kitchen window</h5>
-        <p class="text-muted small mb-3">Single-paneled Simplex window with horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '1 panel kitchen window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 panel kitchen window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/kw2.1.jpg" alt="2 panel kitchen window">
-        </div>
-        <h5 class="product-title">2 panel kitchen window</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex window with horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 panel kitchen window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel kitchen window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/kw3.1.jpg" alt="3 panel kitchen window">
-        </div>
-        <h5 class="product-title">3 panel kitchen window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with horizontal ventilation slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel kitchen window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 3 panel kitchen window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/kw3.2.jpg" alt="3 panel kitchen window">
-        </div>
-        <h5 class="product-title">3 panel kitchen window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex window with divided horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '3 panel kitchen window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: ventilator -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/v1.2.jpg" alt="ventilator">
-        </div>
-        <h5 class="product-title">ventilator</h5>
-        <p class="text-muted small mb-3">Single-paneled Simplex ventilator with horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'ventilator';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: Ventilator with exhaust -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/v1.1.jpg" alt="Ventilator with exhaust">
-        </div>
-        <h5 class="product-title">Ventilator with exhaust</h5>
-        <p class="text-muted small mb-3">Simplex ventilator featuring a slatted panel and a dedicated exhaust vent opening.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Ventilator with exhaust';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: 2 panel ventilator -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/v2.1.jpg" alt="2 panel ventilator">
-        </div>
-        <h5 class="product-title">2 panel ventilator</h5>
-        <p class="text-muted small mb-3">Double-paneled Simplex ventilator with horizontal slats and top hinges.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '2 panel ventilator';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: Mesh window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/meshwindow.jpg" alt="Mesh window">
-        </div>
-        <h5 class="product-title">Mesh window</h5>
-        <p class="text-muted small mb-3">Triple-paneled Simplex mesh window featuring horizontal slats and open outer frames.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Mesh window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: bay window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/baywindow.jpg" alt="bay window">
-        </div>
-        <h5 class="product-title">bay window</h5>
-        <p class="text-muted small mb-3">Three-paneled Simplex bay window featuring angled side sections and horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'bay window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: corner window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/cornerwindow.jpg" alt="corner window">
-        </div>
-        <h5 class="product-title">corner window</h5>
-        <p class="text-muted small mb-3">Four-paneled Simplex corner window featuring a 90-degree angled design and horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'corner window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: corner window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/cornerwindow1.1.jpg" alt="corner window">
-        </div>
-        <h5 class="product-title">corner window</h5>
-        <p class="text-muted small mb-3">Multi-paneled Simplex corner window featuring a top transom section and horizontal slats.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'corner window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: round window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/roundwindow1.jpg" alt="round window">
-        </div>
-        <h5 class="product-title">round window</h5>
-        <p class="text-muted small mb-3">Round double-paneled Simplex window featuring horizontal slats and center hinges.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'round window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: arch window -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/archwindow.jpg" alt="arch window">
-        </div>
-        <h5 class="product-title">arch window</h5>
-        <p class="text-muted small mb-3">Arched four-paneled Simplex window featuring horizontal slats and central double doors.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'arch window';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: Door frame with manchari -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/df1.1.jpg" alt="Door frame with manchari">
-        </div>
-        <h5 class="product-title">Door frame with manchari</h5>
-        <p class="text-muted small mb-3"> Simplex doorframe featuring a step manchari profile.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Door frame with manchari';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: Door frame with manchari -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/df1.2.jpg" alt="Door frame with manchari">
-        </div>
-        <h5 class="product-title">Door frame with manchari</h5>
-        <p class="text-muted small mb-3">Simplex doorframe featuring a two-step manchari profile.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'Door frame with manchari';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: door frame with sill -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/df1.3.jpg" alt="door frame with sill">
-        </div>
-        <h5 class="product-title">door frame with sill</h5>
-        <p class="text-muted small mb-3">Simplex doorframe featuring a flat profile and a bottom sill.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'door frame with sill';">Call Now</button>
-    </div>
-</div>
-
-<!-- New Product: door frame without sill -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/df1.5.jpg" alt="door frame without sill">
-        </div>
-        <h5 class="product-title">door frame without sill</h5>
-        <p class="text-muted small mb-3">Simplex doorframe featuring a flat profile without a bottom sill.</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = 'door frame without sill';">Call Now</button>
-    </div>
-</div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="small text-muted">
-                    &copy; 2026 Simplex. All rights reserved.
-                </div>
-            </div>
-        </footer>
-
-    <!-- Closes the page-wrapper -->
-    </div>
-
-    <!-- Callback Pop-up Modal -->
-    <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-0 border-0">
-                <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4 p-md-5">
-                    
-                    <!-- Form Container -->
-                    <div id="formContainer">
-                        <div class="row g-4">
-                            <!-- Left Side: Contact Info & WhatsApp -->
-                            <div class="col-md-5 border-end-md pe-md-4 d-flex flex-column">
-                                <div>
-                                    <h4 class="fw-bold text-uppercase mb-3" style="color: #111; letter-spacing: 1px;">Get In Touch</h4>
-                                    <p class="text-muted small mb-4">Speak directly with our team or drop us an email regarding your project requirements.</p>
-                                    
-                                    <div class="mb-3">
-                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Phone Call</span>
-                                        <a href="tel:+917510800577" class="text-decoration-none fw-bold text-dark fs-6">+91 75108 00577</a>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <span class="text-uppercase text-muted small fw-bold d-block mb-1">Email Inquiry</span>
-                                        <a href="mailto:design@simplex.com" class="text-decoration-none fw-bold text-dark fs-6">design@simplex.com</a>
-                                    </div>
-                                </div>
-
-                                <!-- WhatsApp Button Section -->
-                                <div class="mt-4 pt-4 border-top">
-                                    <span class="text-uppercase text-muted small fw-bold d-block mb-2">Instant Chat</span>
-                                    
-                                    <!-- PASTE YOUR WHATSAPP LINK IN THE href BELOW -->
-                                    <a href="https://wa.link/3ytl2k" target="_blank" class="btn w-100 rounded-0 text-uppercase fw-bold py-2 d-flex justify-content-center align-items-center gap-2 text-white" style="letter-spacing: 1px; background-color: #25D366; border-color: #25D366;">
-                                        <i class="bi bi-whatsapp fs-5"></i> WhatsApp Now
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- Right Side: Request Callback Form -->
-                            <div class="col-md-7 ps-md-4">
-                                <h4 class="fw-bold text-uppercase mb-2" style="color: #111; letter-spacing: 1px;">Request A Callback</h4>
-                                <p class="text-muted small mb-4">Fill out the form below and our design expert will get back to you shortly.</p>
-                                
-                                <form id="callbackForm" action="https://api.web3forms.com/submit" method="POST">
-                                    <input type="hidden" name="access_key" value="d5c3d795-3a4f-4f79-bc11-1258b7dd6694">
-                                    <input type="hidden" name="subject" value="Callback Request from Simplex Products Page">
-                                    <input type="hidden" id="interestedProduct" name="interested_product" value="General Inquiry">
-
-                                    <div class="mb-3">
-                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Name</label>
-                                        <input type="text" name="name" class="form-control rounded-0" required placeholder="Enter full name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label small fw-bold text-muted text-uppercase">Phone Number</label>
-                                        <input type="tel" name="phone" class="form-control rounded-0" required placeholder="+91 XXXXX XXXXX">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label small fw-bold text-muted text-uppercase">Your Location / City</label>
-                                        <input type="text" name="location" class="form-control rounded-0" required placeholder="Enter your city or project location">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label class="form-label small fw-bold text-muted text-uppercase">Message / Note (Optional)</label>
-                                        <textarea name="message" class="form-control rounded-0" rows="3" placeholder="Specify requirements or convenient time to call"></textarea>
-                                    </div>
-                                    <button type="submit" id="submitBtn" class="btn btn-dark w-100 rounded-0 text-uppercase fw-bold py-2" style="letter-spacing: 1px;">Submit Request</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Success Message -->
-                    <div id="successMessage" class="d-none text-center py-5">
-                        <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
-                        <h5 class="mt-4 fw-bold">Thank You!</h5>
-                        <p class="text-muted">Your details have been received. You will get a callback shortly.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom Scripts -->
-    <script>
-        // --- 1. SECRET ADMIN LOGIN ---
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.key === 'q') {
-                const pin = prompt("Enter Admin PIN to unlock the product generator:");
-                if (pin === "1234") { 
-                    document.getElementById('adminPanel').classList.remove('d-none');
-                }
-            }
-        });
-
-        // --- 2. GENERATE HTML CODE FOR GITHUB AND LIVE PREVIEW ---
-        document.getElementById('productGeneratorForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('newProdName').value;
-            const desc = document.getElementById('newProdDesc').value;
-            const imageFilename = document.getElementById('newProdImage').value;
-
-            const cardHTML = `
-<!-- New Product: ${name} -->
-<div class="col-md-6 col-lg-3">
-    <div class="card product-card text-center">
-        <div class="product-img-wrapper">
-            <img src="assets/windows/${imageFilename}" alt="${name}">
-        </div>
-        <h5 class="product-title">${name}</h5>
-        <p class="text-muted small mb-3">${desc}</p>
-        <button type="button" class="btn btn-outline-dark w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="document.getElementById('interestedProduct').value = '${name}';">Call Now</button>
-    </div>
-</div>`;
-
-            // Show the code for GitHub pushing
-            const outputBox = document.getElementById('codeOutputBox');
-            const textArea = document.getElementById('generatedCode');
-            outputBox.classList.remove('d-none');
-            textArea.value = cardHTML.trim();
-            textArea.select();
-
-            // Inject it live into the new Windows section for preview
-            const windowsRow = document.getElementById('windowsRow');
-            windowsRow.insertAdjacentHTML('afterbegin', cardHTML);
-        });
-
-        // --- 3. BACKGROUND FORM SUBMISSION (No Redirect) ---
-        const callbackForm = document.getElementById('callbackForm');
-        
-        if (callbackForm) {
-            callbackForm.addEventListener('submit', function(e) {
-                e.preventDefault(); 
-
-                const submitBtn = document.getElementById('submitBtn');
-                submitBtn.innerHTML = 'Sending...';
-                submitBtn.disabled = true;
-
-                const formData = new FormData(callbackForm);
-
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                        document.getElementById('formContainer').classList.add('d-none');
-                        document.getElementById('successMessage').classList.remove('d-none');
-                    } else {
-                        alert("Something went wrong. Please try again.");
-                        submitBtn.innerHTML = 'Submit Request';
-                        submitBtn.disabled = false;
-                    }
-                })
-                .catch(error => {
-                    alert("Something went wrong. Please check your internet and try again.");
-                    submitBtn.innerHTML = 'Submit Request';
-                    submitBtn.disabled = false;
-                });
-            });
-        }
-
-        // --- 4. RESET MODAL ON CLOSE ---
-        const callbackModal = document.getElementById('callbackModal');
-        callbackModal.addEventListener('hidden.bs.modal', function () {
-            document.getElementById('callbackForm').reset();
-            document.getElementById('formContainer').classList.remove('d-none');
-            document.getElementById('successMessage').classList.add('d-none');
-            
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerHTML = 'Submit Request';
-            submitBtn.disabled = false;
-        });
-
-        // --- 5. SMOOTH PAGE BLUR SCRIPT ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('a');
-            
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    if (href && !href.startsWith('#') && !href.startsWith('http') && !this.hasAttribute('data-bs-toggle')) {
-                        e.preventDefault(); 
-                        document.body.classList.add('page-blur-out'); 
-                        
-                        setTimeout(() => {
-                            window.location.href = href;
-                        }, 500);
-                    }
-                });
-            });
-        });
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#073e43">
+    <title>Explore our collection | Simplex Windows & Doors</title>
+    <meta name="description" content="Browse Simplex steel windows, French windows, kitchen windows, ventilators, doors and frames. Search our product collection.">
+    <link rel="canonical" href="https://www.simplexwindow.com/products.html">
+    <meta property="og:title" content="Explore our collection | Simplex">
+    <meta property="og:description" content="Browse Simplex steel windows, French windows, kitchen windows, ventilators, doors and frames. Search our product collection.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.simplexwindow.com/assets/collection/campaign.webp">
+    <link rel="icon" href="assets/LOGO.ico">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/site.js" defer>
     </script>
-</body>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="topbar">
+      <div class="container">
+        <span>Precision-crafted steel. Thoughtfully designed.</span>
+        <a href="tel:+917510800577">Let’s talk: +91 75108 00577 ↗</a>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Simplex home">
+          <img src="assets/collection/logo.webp" width="180" height="74" alt="Simplex Windows and Doors">
+        </a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="products.html" aria-current="page">Our collection</a>
+          <a href="index.html#about">Our story</a>
+          <a href="franchises.html">Find a dealer</a>
+          <button class="button small" data-enquire="General enquiry">Let’s build together ↗</button>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-intro container">
+        <p class="eyebrow">THE SIMPLEX COLLECTION</p>
+        <h1>Made of steel.<br>
+          <em>Full of possibilities.</em>
+        </h1>
+        <div class="intro-bottom">
+          <p>Explore windows, doors and frames that balance<br>everyday strength with enduring design.</p>
+          <a class="text-link" href="assets/simplex-catalogue.pdf" download>Download catalogue ↓</a>
+        </div>
+      </section>
+      <section class="container product-section">
+        <div class="collection-tools">
+          <label class="search-label" for="product-search">Find your design<input id="product-search" type="search" placeholder="Search by design, style or code…">
+          </label>
+          <p id="product-count" role="status">
+          </p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter product collection">
+          <button data-filter="All designs" aria-pressed="true">All designs</button>
+          <button data-filter="Architectural windows" aria-pressed="false">Architectural windows</button>
+          <button data-filter="Windows" aria-pressed="false">Windows</button>
+          <button data-filter="French windows" aria-pressed="false">French windows</button>
+          <button data-filter="Kitchen windows" aria-pressed="false">Kitchen windows</button>
+          <button data-filter="Ventilators" aria-pressed="false">Ventilators</button>
+          <button data-filter="Door frames" aria-pressed="false">Door frames</button>
+          <button data-filter="Steel doors" aria-pressed="false">Steel doors</button>
+        </div>
+        <p class="range-note">Images show design options. Confirm dimensions, finish and specifications with your dealer before ordering.</p>
+        <div class="product-grid">
+          <article class="product-card" data-category="Architectural windows" data-search="arch window arched four-paneled simplex window featuring horizontal slats and central double doors. archwindow1">
+            <div class="product-image">
+              <img src="assets/collection/archwindow1.webp" alt="Arch Window" loading="lazy" width="600" height="600">
+              <span>ARCHWINDOW1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Arch Window</h3>
+              <p>Arched four-paneled Simplex window featuring horizontal slats and central double doors.</p>
+              <button class="text-link" data-enquire="Arch Window · ARCHWINDOW1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="corner window four-paneled simplex corner window featuring a 90-degree angled design and horizontal slats. cornerwindow1">
+            <div class="product-image">
+              <img src="assets/collection/cornerwindow1.webp" alt="Corner Window" loading="lazy" width="600" height="600">
+              <span>CORNERWINDOW1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Corner Window</h3>
+              <p>four-paneled Simplex corner window featuring a 90-degree angled design and horizontal slats.</p>
+              <button class="text-link" data-enquire="Corner Window · CORNERWINDOW1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="round window round double-paneled simplex window featuring horizontal slats and center hinges. roundwindow">
+            <div class="product-image">
+              <img src="assets/collection/roundwindow.webp" alt="Round Window" loading="lazy" width="600" height="600">
+              <span>ROUNDWINDOW</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Round Window</h3>
+              <p>Round double-paneled Simplex window featuring horizontal slats and center hinges.</p>
+              <button class="text-link" data-enquire="Round Window · ROUNDWINDOW">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="1 panel window tall, simplex louvered window with horizontal ventilation slats. w1.1">
+            <div class="product-image">
+              <img src="assets/collection/w1.1.webp" alt="1 Panel Window" loading="lazy" width="600" height="600">
+              <span>W1.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>1 Panel Window</h3>
+              <p>Tall, Simplex louvered window with horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="1 Panel Window · W1.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="1 panel window simplex louvered window with thin horizontal slats. w1.2">
+            <div class="product-image">
+              <img src="assets/collection/w1.2.webp" alt="1 Panel Window" loading="lazy" width="600" height="600">
+              <span>W1.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>1 Panel Window</h3>
+              <p>Simplex louvered window with thin horizontal slats.</p>
+              <button class="text-link" data-enquire="1 Panel Window · W1.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="1 panel window simplex window with three vertical metallic bars and a central horizontal crossbar. w1.3">
+            <div class="product-image">
+              <img src="assets/collection/w1.3.webp" alt="1 Panel Window" loading="lazy" width="600" height="600">
+              <span>W1.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>1 Panel Window</h3>
+              <p>Simplex window with three vertical metallic bars and a central horizontal crossbar.</p>
+              <button class="text-link" data-enquire="1 Panel Window · W1.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="1 panel window simplex window split into two hinged sections, both featuring thin horizontal metallic bars. w1.4">
+            <div class="product-image">
+              <img src="assets/collection/w1.4.webp" alt="1 Panel Window" loading="lazy" width="600" height="600">
+              <span>W1.4</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>1 Panel Window</h3>
+              <p>Simplex window split into two hinged sections, both featuring thin horizontal metallic bars.</p>
+              <button class="text-link" data-enquire="1 Panel Window · W1.4">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="2 panel window double-paneled simplex window with a grid top and louvered bottom. w2.1">
+            <div class="product-image">
+              <img src="assets/collection/w2.1.webp" alt="2 Panel Window" loading="lazy" width="600" height="600">
+              <span>W2.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>2 Panel Window</h3>
+              <p>Double-paneled Simplex window with a grid top and louvered bottom.</p>
+              <button class="text-link" data-enquire="2 Panel Window · W2.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="2 panel window double-paneled simplex window with horizontal louvered slats. w2.2">
+            <div class="product-image">
+              <img src="assets/collection/w2.2.webp" alt="2 Panel Window" loading="lazy" width="600" height="600">
+              <span>W2.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>2 Panel Window</h3>
+              <p>Double-paneled Simplex window with horizontal louvered slats.</p>
+              <button class="text-link" data-enquire="2 Panel Window · W2.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="2 panel window double-paneled simplex window with thin horizontal metallic bars. w2.3">
+            <div class="product-image">
+              <img src="assets/collection/w2.3.webp" alt="2 Panel Window" loading="lazy" width="600" height="600">
+              <span>W2.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>2 Panel Window</h3>
+              <p>Double-paneled Simplex window with thin horizontal metallic bars.</p>
+              <button class="text-link" data-enquire="2 Panel Window · W2.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="2 panel window double-paneled simplex window with a rectangular grid design. w2.4">
+            <div class="product-image">
+              <img src="assets/collection/w2.4.webp" alt="2 Panel Window" loading="lazy" width="600" height="600">
+              <span>W2.4</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>2 Panel Window</h3>
+              <p>Double-paneled Simplex window with a rectangular grid design.</p>
+              <button class="text-link" data-enquire="2 Panel Window · W2.4">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="3 panel window triple-paneled simplex window with slatted upper sections and louvered bottoms. w3.1">
+            <div class="product-image">
+              <img src="assets/collection/w3.1.webp" alt="3 Panel Window" loading="lazy" width="600" height="600">
+              <span>W3.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>3 Panel Window</h3>
+              <p>Triple-paneled Simplex window with slatted upper sections and louvered bottoms.</p>
+              <button class="text-link" data-enquire="3 Panel Window · W3.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="3 panel window triple-paneled simplex window with horizontal louvered slats. w3.2">
+            <div class="product-image">
+              <img src="assets/collection/w3.2.webp" alt="3 Panel Window" loading="lazy" width="600" height="600">
+              <span>W3.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>3 Panel Window</h3>
+              <p>Triple-paneled Simplex window with horizontal louvered slats.</p>
+              <button class="text-link" data-enquire="3 Panel Window · W3.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="3 panel window triple-paneled simplex window with horizontal slats and a split center section. w3.3">
+            <div class="product-image">
+              <img src="assets/collection/w3.3.webp" alt="3 Panel Window" loading="lazy" width="600" height="600">
+              <span>W3.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>3 Panel Window</h3>
+              <p>Triple-paneled Simplex window with horizontal slats and a split center section.</p>
+              <button class="text-link" data-enquire="3 Panel Window · W3.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="3 panel window triple-paneled simplex window with a full square grid design. w3.4">
+            <div class="product-image">
+              <img src="assets/collection/w3.4.webp" alt="3 Panel Window" loading="lazy" width="600" height="600">
+              <span>W3.4</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>3 Panel Window</h3>
+              <p>Triple-paneled Simplex window with a full square grid design.</p>
+              <button class="text-link" data-enquire="3 Panel Window · W3.4">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="3 panel window triple-paneled simplex window with horizontal ventilation slats. w3.5">
+            <div class="product-image">
+              <img src="assets/collection/w3.5.webp" alt="3 Panel Window" loading="lazy" width="600" height="600">
+              <span>W3.5</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>3 Panel Window</h3>
+              <p>Triple-paneled Simplex window with horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="3 Panel Window · W3.5">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="4 panel window four-paneled simplex window with horizontal ventilation slats. w4.1">
+            <div class="product-image">
+              <img src="assets/collection/w4.1.webp" alt="4 Panel Window" loading="lazy" width="600" height="600">
+              <span>W4.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>4 Panel Window</h3>
+              <p>Four-paneled Simplex window with horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="4 Panel Window · W4.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="4 panel window four-paneled simplex window with horizontal slats and split center sections. w4.2">
+            <div class="product-image">
+              <img src="assets/collection/w4.2.webp" alt="4 Panel Window" loading="lazy" width="600" height="600">
+              <span>W4.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>4 Panel Window</h3>
+              <p>Four-paneled Simplex window with horizontal slats and split center sections.</p>
+              <button class="text-link" data-enquire="4 Panel Window · W4.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="i max window triple-paneled simplex window with horizontal slats and two open frames. imax">
+            <div class="product-image">
+              <img src="assets/collection/imax.webp" alt="I Max Window" loading="lazy" width="600" height="600">
+              <span>IMAX</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>I Max Window</h3>
+              <p>Triple-paneled Simplex window with horizontal slats and two open frames.</p>
+              <button class="text-link" data-enquire="I Max Window · IMAX">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="sliding window double-paneled simplex sliding window with horizontal slats. slidingwindow">
+            <div class="product-image">
+              <img src="assets/collection/slidingwindow.webp" alt="Sliding Window" loading="lazy" width="600" height="600">
+              <span>SLIDINGWINDOW</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>Sliding Window</h3>
+              <p>Double-paneled Simplex sliding window with horizontal slats.</p>
+              <button class="text-link" data-enquire="Sliding Window · SLIDINGWINDOW">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="1 panel french window simplex window divided into three vertically stacked sections, all featuring horizontal slats. fw1.1">
+            <div class="product-image">
+              <img src="assets/collection/fw1.1.webp" alt="1 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW1.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>1 Panel French Window</h3>
+              <p>Simplex window divided into three vertically stacked sections, all featuring horizontal slats.</p>
+              <button class="text-link" data-enquire="1 Panel French Window · FW1.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="1 panel french window single-paneled simplex window featuring thin horizontal ventilation slats. fw1.2">
+            <div class="product-image">
+              <img src="assets/collection/fw1.2.webp" alt="1 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW1.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>1 Panel French Window</h3>
+              <p>Single-paneled Simplex window featuring thin horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="1 Panel French Window · FW1.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="1 panel french window single-paneled simplex window with a slatted upper section and a louvered bottom. fw1.3">
+            <div class="product-image">
+              <img src="assets/collection/fw1.3.webp" alt="1 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW1.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>1 Panel French Window</h3>
+              <p>Single-paneled Simplex window with a slatted upper section and a louvered bottom.</p>
+              <button class="text-link" data-enquire="1 Panel French Window · FW1.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="1 panel french window simplex window featuring a slatted upper section and a separate louvered bottom panel. fw1.4">
+            <div class="product-image">
+              <img src="assets/collection/fw1.4.webp" alt="1 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW1.4</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>1 Panel French Window</h3>
+              <p>Simplex window featuring a slatted upper section and a separate louvered bottom panel.</p>
+              <button class="text-link" data-enquire="1 Panel French Window · FW1.4">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="1 panel french window single-paneled simplex window with a full square grid design. fw1.5">
+            <div class="product-image">
+              <img src="assets/collection/fw1.5.webp" alt="1 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW1.5</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>1 Panel French Window</h3>
+              <p>Single-paneled Simplex window with a full square grid design.</p>
+              <button class="text-link" data-enquire="1 Panel French Window · FW1.5">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="2 panel french window double-paneled simplex window with horizontal louvered slats. fw2.1">
+            <div class="product-image">
+              <img src="assets/collection/fw2.1.webp" alt="2 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW2.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>2 Panel French Window</h3>
+              <p>Double-paneled Simplex window with horizontal louvered slats.</p>
+              <button class="text-link" data-enquire="2 Panel French Window · FW2.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="2 panel french window simplex window split into upper and lower hinged sections, featuring horizontal slats. fw2.2">
+            <div class="product-image">
+              <img src="assets/collection/fw2.2.webp" alt="2 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW2.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>2 Panel French Window</h3>
+              <p>Simplex window split into upper and lower hinged sections, featuring horizontal slats.</p>
+              <button class="text-link" data-enquire="2 Panel French Window · FW2.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="2 panel french window double-paneled simplex window with slatted upper sections and louvered bottom panels. fw2.3">
+            <div class="product-image">
+              <img src="assets/collection/fw2.3.webp" alt="2 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW2.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>2 Panel French Window</h3>
+              <p>Double-paneled Simplex window with slatted upper sections and louvered bottom panels.</p>
+              <button class="text-link" data-enquire="2 Panel French Window · FW2.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="3 panel french window triple-paneled simplex window with horizontal ventilation slats. fw3.1">
+            <div class="product-image">
+              <img src="assets/collection/fw3.1.webp" alt="3 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW3.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>3 Panel French Window</h3>
+              <p>Triple-paneled Simplex window with horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="3 Panel French Window · FW3.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="3 panel french window triple-paneled simplex window featuring vertical bars and a horizontal divider. fw3.2">
+            <div class="product-image">
+              <img src="assets/collection/fw3.2.webp" alt="3 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW3.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>3 Panel French Window</h3>
+              <p>Triple-paneled Simplex window featuring vertical bars and a horizontal divider.</p>
+              <button class="text-link" data-enquire="3 Panel French Window · FW3.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="3 panel french window simplex window with horizontal slats and a center section divided into three stacked panels. fw3.3">
+            <div class="product-image">
+              <img src="assets/collection/fw3.3.webp" alt="3 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW3.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>3 Panel French Window</h3>
+              <p>Simplex window with horizontal slats and a center section divided into three stacked panels.</p>
+              <button class="text-link" data-enquire="3 Panel French Window · FW3.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="French windows" data-search="4 panel french window four-paneled simplex window with slatted upper sections and louvered bottom panels. fw4.1">
+            <div class="product-image">
+              <img src="assets/collection/fw4.1.webp" alt="4 Panel French Window" loading="lazy" width="600" height="600">
+              <span>FW4.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">French windows</p>
+              <h3>4 Panel French Window</h3>
+              <p>Four-paneled Simplex window with slatted upper sections and louvered bottom panels.</p>
+              <button class="text-link" data-enquire="4 Panel French Window · FW4.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Kitchen windows" data-search="1 panel kitchen window single-paneled simplex window with horizontal ventilation slats. kw1.1">
+            <div class="product-image">
+              <img src="assets/collection/kw1.1.webp" alt="1 Panel Kitchen Window" loading="lazy" width="600" height="600">
+              <span>KW1.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Kitchen windows</p>
+              <h3>1 Panel Kitchen Window</h3>
+              <p>Single-paneled Simplex window with horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="1 Panel Kitchen Window · KW1.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Kitchen windows" data-search="2 panel kitchen window double-paneled simplex window with horizontal slats. kw2.1">
+            <div class="product-image">
+              <img src="assets/collection/kw2.1.webp" alt="2 Panel Kitchen Window" loading="lazy" width="600" height="600">
+              <span>KW2.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Kitchen windows</p>
+              <h3>2 Panel Kitchen Window</h3>
+              <p>Double-paneled Simplex window with horizontal slats.</p>
+              <button class="text-link" data-enquire="2 Panel Kitchen Window · KW2.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Kitchen windows" data-search="3 panel kitchen window triple-paneled simplex window with horizontal ventilation slats. kw3.1">
+            <div class="product-image">
+              <img src="assets/collection/kw3.1.webp" alt="3 Panel Kitchen Window" loading="lazy" width="600" height="600">
+              <span>KW3.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Kitchen windows</p>
+              <h3>3 Panel Kitchen Window</h3>
+              <p>Triple-paneled Simplex window with horizontal ventilation slats.</p>
+              <button class="text-link" data-enquire="3 Panel Kitchen Window · KW3.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Kitchen windows" data-search="3 panel kitchen window triple-paneled simplex window with divided horizontal slats. kw3.2">
+            <div class="product-image">
+              <img src="assets/collection/kw3.2.webp" alt="3 Panel Kitchen Window" loading="lazy" width="600" height="600">
+              <span>KW3.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Kitchen windows</p>
+              <h3>3 Panel Kitchen Window</h3>
+              <p>Triple-paneled Simplex window with divided horizontal slats.</p>
+              <button class="text-link" data-enquire="3 Panel Kitchen Window · KW3.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Ventilators" data-search="ventilator single-paneled simplex ventilator with horizontal slats. v1.2">
+            <div class="product-image">
+              <img src="assets/collection/v1.2.webp" alt="Ventilator" loading="lazy" width="600" height="600">
+              <span>V1.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Ventilators</p>
+              <h3>Ventilator</h3>
+              <p>Single-paneled Simplex ventilator with horizontal slats.</p>
+              <button class="text-link" data-enquire="Ventilator · V1.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Ventilators" data-search="ventilator with exhaust simplex ventilator featuring a slatted panel and a dedicated exhaust vent opening. v1.1">
+            <div class="product-image">
+              <img src="assets/collection/v1.1.webp" alt="Ventilator With Exhaust" loading="lazy" width="600" height="600">
+              <span>V1.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Ventilators</p>
+              <h3>Ventilator With Exhaust</h3>
+              <p>Simplex ventilator featuring a slatted panel and a dedicated exhaust vent opening.</p>
+              <button class="text-link" data-enquire="Ventilator With Exhaust · V1.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Ventilators" data-search="2 panel ventilator double-paneled simplex ventilator with horizontal slats and top hinges. v2.1">
+            <div class="product-image">
+              <img src="assets/collection/v2.1.webp" alt="2 Panel Ventilator" loading="lazy" width="600" height="600">
+              <span>V2.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Ventilators</p>
+              <h3>2 Panel Ventilator</h3>
+              <p>Double-paneled Simplex ventilator with horizontal slats and top hinges.</p>
+              <button class="text-link" data-enquire="2 Panel Ventilator · V2.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Windows" data-search="mesh window triple-paneled simplex mesh window featuring horizontal slats and open outer frames. meshwindow">
+            <div class="product-image">
+              <img src="assets/collection/meshwindow.webp" alt="Mesh Window" loading="lazy" width="600" height="600">
+              <span>MESHWINDOW</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Windows</p>
+              <h3>Mesh Window</h3>
+              <p>Triple-paneled Simplex mesh window featuring horizontal slats and open outer frames.</p>
+              <button class="text-link" data-enquire="Mesh Window · MESHWINDOW">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="bay window three-paneled simplex bay window featuring angled side sections and horizontal slats. baywindow">
+            <div class="product-image">
+              <img src="assets/collection/baywindow.webp" alt="Bay Window" loading="lazy" width="600" height="600">
+              <span>BAYWINDOW</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Bay Window</h3>
+              <p>Three-paneled Simplex bay window featuring angled side sections and horizontal slats.</p>
+              <button class="text-link" data-enquire="Bay Window · BAYWINDOW">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="corner window four-paneled simplex corner window featuring a 90-degree angled design and horizontal slats. cornerwindow">
+            <div class="product-image">
+              <img src="assets/collection/cornerwindow.webp" alt="Corner Window" loading="lazy" width="600" height="600">
+              <span>CORNERWINDOW</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Corner Window</h3>
+              <p>Four-paneled Simplex corner window featuring a 90-degree angled design and horizontal slats.</p>
+              <button class="text-link" data-enquire="Corner Window · CORNERWINDOW">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="corner window multi-paneled simplex corner window featuring a top transom section and horizontal slats. cornerwindow1.1">
+            <div class="product-image">
+              <img src="assets/collection/cornerwindow1.1.webp" alt="Corner Window" loading="lazy" width="600" height="600">
+              <span>CORNERWINDOW1.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Corner Window</h3>
+              <p>Multi-paneled Simplex corner window featuring a top transom section and horizontal slats.</p>
+              <button class="text-link" data-enquire="Corner Window · CORNERWINDOW1.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="round window round double-paneled simplex window featuring horizontal slats and center hinges. roundwindow1">
+            <div class="product-image">
+              <img src="assets/collection/roundwindow1.webp" alt="Round Window" loading="lazy" width="600" height="600">
+              <span>ROUNDWINDOW1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Round Window</h3>
+              <p>Round double-paneled Simplex window featuring horizontal slats and center hinges.</p>
+              <button class="text-link" data-enquire="Round Window · ROUNDWINDOW1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Architectural windows" data-search="arch window arched four-paneled simplex window featuring horizontal slats and central double doors. archwindow">
+            <div class="product-image">
+              <img src="assets/collection/archwindow.webp" alt="Arch Window" loading="lazy" width="600" height="600">
+              <span>ARCHWINDOW</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Architectural windows</p>
+              <h3>Arch Window</h3>
+              <p>Arched four-paneled Simplex window featuring horizontal slats and central double doors.</p>
+              <button class="text-link" data-enquire="Arch Window · ARCHWINDOW">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Door frames" data-search="door frame with manchari simplex doorframe featuring a step manchari profile. df1.1">
+            <div class="product-image">
+              <img src="assets/collection/df1.1.webp" alt="Door Frame With Manchari" loading="lazy" width="600" height="600">
+              <span>DF1.1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Door frames</p>
+              <h3>Door Frame With Manchari</h3>
+              <p>Simplex doorframe featuring a step manchari profile.</p>
+              <button class="text-link" data-enquire="Door Frame With Manchari · DF1.1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Door frames" data-search="door frame with manchari simplex doorframe featuring a two-step manchari profile. df1.2">
+            <div class="product-image">
+              <img src="assets/collection/df1.2.webp" alt="Door Frame With Manchari" loading="lazy" width="600" height="600">
+              <span>DF1.2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Door frames</p>
+              <h3>Door Frame With Manchari</h3>
+              <p>Simplex doorframe featuring a two-step manchari profile.</p>
+              <button class="text-link" data-enquire="Door Frame With Manchari · DF1.2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Door frames" data-search="door frame with sill simplex doorframe featuring a flat profile and a bottom sill. df1.3">
+            <div class="product-image">
+              <img src="assets/collection/df1.3.webp" alt="Door Frame With Sill" loading="lazy" width="600" height="600">
+              <span>DF1.3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Door frames</p>
+              <h3>Door Frame With Sill</h3>
+              <p>Simplex doorframe featuring a flat profile and a bottom sill.</p>
+              <button class="text-link" data-enquire="Door Frame With Sill · DF1.3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Door frames" data-search="door frame without sill simplex doorframe featuring a flat profile without a bottom sill. df1.5">
+            <div class="product-image">
+              <img src="assets/collection/df1.5.webp" alt="Door Frame Without Sill" loading="lazy" width="600" height="600">
+              <span>DF1.5</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Door frames</p>
+              <h3>Door Frame Without Sill</h3>
+              <p>Simplex doorframe featuring a flat profile without a bottom sill.</p>
+              <button class="text-link" data-enquire="Door Frame Without Sill · DF1.5">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Steel doors" data-search="oval panel steel door a decorative steel door design from the simplex catalogue. ask our team about available sizes and finishes. cat-d1">
+            <div class="product-image">
+              <img src="assets/collection/door-1.webp" alt="Oval Panel Steel Door" loading="lazy" width="600" height="600">
+              <span>CAT-D1</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Steel doors</p>
+              <h3>Oval Panel Steel Door</h3>
+              <p>A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.</p>
+              <button class="text-link" data-enquire="Oval Panel Steel Door · CAT-D1">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Steel doors" data-search="classic panel steel door a decorative steel door design from the simplex catalogue. ask our team about available sizes and finishes. cat-d2">
+            <div class="product-image">
+              <img src="assets/collection/door-2.webp" alt="Classic Panel Steel Door" loading="lazy" width="600" height="600">
+              <span>CAT-D2</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Steel doors</p>
+              <h3>Classic Panel Steel Door</h3>
+              <p>A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.</p>
+              <button class="text-link" data-enquire="Classic Panel Steel Door · CAT-D2">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Steel doors" data-search="linear panel steel door a decorative steel door design from the simplex catalogue. ask our team about available sizes and finishes. cat-d3">
+            <div class="product-image">
+              <img src="assets/collection/door-3.webp" alt="Linear Panel Steel Door" loading="lazy" width="600" height="600">
+              <span>CAT-D3</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Steel doors</p>
+              <h3>Linear Panel Steel Door</h3>
+              <p>A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.</p>
+              <button class="text-link" data-enquire="Linear Panel Steel Door · CAT-D3">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Steel doors" data-search="arched panel steel door a decorative steel door design from the simplex catalogue. ask our team about available sizes and finishes. cat-d4">
+            <div class="product-image">
+              <img src="assets/collection/door-4.webp" alt="Arched Panel Steel Door" loading="lazy" width="600" height="600">
+              <span>CAT-D4</span>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">Steel doors</p>
+              <h3>Arched Panel Steel Door</h3>
+              <p>A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.</p>
+              <button class="text-link" data-enquire="Arched Panel Steel Door · CAT-D4">Enquire about this design <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+        </div>
+        <div id="empty-products" class="empty" hidden>
+          <h2>No matching designs</h2>
+          <p>Try a different search or choose another collection.</p>
+          <button class="button" id="reset-filters">Show all designs</button>
+        </div>
+      </section>
+      <section class="cta">
+        <div class="container">
+          <div>
+            <p class="eyebrow">A BETTER VIEW STARTS WITH A CONVERSATION</p>
+            <h2>Your home. Your vision.<br>
+              <em>Our craftsmanship.</em>
+            </h2>
+          </div>
+          <button class="button light" data-enquire="General enquiry">Discuss your project ↗</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html">simplex<span>®</span>
+          </a>
+          <p>Strength in every detail.<br>Character in every home.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <a href="products.html">Our collection</a>
+          <a href="index.html#about">The Simplex story</a>
+          <a href="franchises.html">Our dealer network</a>
+          <a href="assets/simplex-catalogue.pdf" download>Download catalogue ↗</a>
+        </div>
+        <div>
+          <h3>Let’s connect</h3>
+          <a href="tel:+917510800577">+91 75108 00577</a>
+          <a href="https://wa.link/3ytl2k" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>
+          <p>KINFRA IIT Park, Kanjikode<br>Palakkad, Kerala, India</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 Simplex Windows & Doors.</span>
+        <span>Designed to protect. Crafted to inspire.</span>
+      </div>
+    </footer>
+    <dialog id="enquiry" aria-labelledby="enquiry-title">
+      <button class="close" aria-label="Close enquiry">×</button>
+      <p class="eyebrow">YOUR NEXT PROJECT STARTS HERE</p>
+      <h2 id="enquiry-title">Let’s make it<br>
+        <em>beautifully yours.</em>
+      </h2>
+      <p>Tell us a little about your project. Our team will help you explore the right design.</p>
+      <form id="enquiry-form">
+        <input type="hidden" name="access_key" value="d5c3d795-3a4f-4f79-bc11-1258b7dd6694">
+        <input type="hidden" name="subject" value="Simplex website project enquiry">
+        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true">
+        <label>Interested in<input id="interested-product" name="interested_product" readonly>
+        </label>
+        <div class="form-row">
+          <label>Your name<input name="name" autocomplete="name" required maxlength="100">
+          </label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" required pattern="[+0-9() .-]{7,20}" title="Enter a phone number with 7 to 20 characters">
+          </label>
+        </div>
+        <label>Project location<input name="location" autocomplete="address-level2" required maxlength="180" placeholder="Town or city">
+        </label>
+        <label>Tell us more <span>(optional)</span>
+          <textarea name="message" rows="3" maxlength="3000" placeholder="Product, quantity, dimensions or preferred callback time">
+          </textarea>
+        </label>
+        <p class="form-note">By submitting, you agree that Simplex may contact you about this enquiry. Your details are sent through Web3Forms.</p>
+        <button class="button" type="submit">Request a callback ↗</button>
+        <p id="form-status" role="status" aria-live="polite">
+        </p>
+      </form>
+      <div class="dialog-contact">Prefer to talk? <a href="tel:+917510800577">Call +91 75108 00577</a>
+      </div>
+    </dialog>
+  </body>
 </html>

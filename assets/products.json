@@ -1,0 +1,373 @@
+[
+  {
+    "name": "Arch Window",
+    "description": "Arched four-paneled Simplex window featuring horizontal slats and central double doors.",
+    "category": "Architectural windows",
+    "image": "assets/collection/archwindow1.webp",
+    "code": "ARCHWINDOW1"
+  },
+  {
+    "name": "Corner Window",
+    "description": "four-paneled Simplex corner window featuring a 90-degree angled design and horizontal slats.",
+    "category": "Architectural windows",
+    "image": "assets/collection/cornerwindow1.webp",
+    "code": "CORNERWINDOW1"
+  },
+  {
+    "name": "Round Window",
+    "description": "Round double-paneled Simplex window featuring horizontal slats and center hinges.",
+    "category": "Architectural windows",
+    "image": "assets/collection/roundwindow.webp",
+    "code": "ROUNDWINDOW"
+  },
+  {
+    "name": "1 Panel Window",
+    "description": "Tall, Simplex louvered window with horizontal ventilation slats.",
+    "category": "Windows",
+    "image": "assets/collection/w1.1.webp",
+    "code": "W1.1"
+  },
+  {
+    "name": "1 Panel Window",
+    "description": "Simplex louvered window with thin horizontal slats.",
+    "category": "Windows",
+    "image": "assets/collection/w1.2.webp",
+    "code": "W1.2"
+  },
+  {
+    "name": "1 Panel Window",
+    "description": "Simplex window with three vertical metallic bars and a central horizontal crossbar.",
+    "category": "Windows",
+    "image": "assets/collection/w1.3.webp",
+    "code": "W1.3"
+  },
+  {
+    "name": "1 Panel Window",
+    "description": "Simplex window split into two hinged sections, both featuring thin horizontal metallic bars.",
+    "category": "Windows",
+    "image": "assets/collection/w1.4.webp",
+    "code": "W1.4"
+  },
+  {
+    "name": "2 Panel Window",
+    "description": "Double-paneled Simplex window with a grid top and louvered bottom.",
+    "category": "Windows",
+    "image": "assets/collection/w2.1.webp",
+    "code": "W2.1"
+  },
+  {
+    "name": "2 Panel Window",
+    "description": "Double-paneled Simplex window with horizontal louvered slats.",
+    "category": "Windows",
+    "image": "assets/collection/w2.2.webp",
+    "code": "W2.2"
+  },
+  {
+    "name": "2 Panel Window",
+    "description": "Double-paneled Simplex window with thin horizontal metallic bars.",
+    "category": "Windows",
+    "image": "assets/collection/w2.3.webp",
+    "code": "W2.3"
+  },
+  {
+    "name": "2 Panel Window",
+    "description": "Double-paneled Simplex window with a rectangular grid design.",
+    "category": "Windows",
+    "image": "assets/collection/w2.4.webp",
+    "code": "W2.4"
+  },
+  {
+    "name": "3 Panel Window",
+    "description": "Triple-paneled Simplex window with slatted upper sections and louvered bottoms.",
+    "category": "Windows",
+    "image": "assets/collection/w3.1.webp",
+    "code": "W3.1"
+  },
+  {
+    "name": "3 Panel Window",
+    "description": "Triple-paneled Simplex window with horizontal louvered slats.",
+    "category": "Windows",
+    "image": "assets/collection/w3.2.webp",
+    "code": "W3.2"
+  },
+  {
+    "name": "3 Panel Window",
+    "description": "Triple-paneled Simplex window with horizontal slats and a split center section.",
+    "category": "Windows",
+    "image": "assets/collection/w3.3.webp",
+    "code": "W3.3"
+  },
+  {
+    "name": "3 Panel Window",
+    "description": "Triple-paneled Simplex window with a full square grid design.",
+    "category": "Windows",
+    "image": "assets/collection/w3.4.webp",
+    "code": "W3.4"
+  },
+  {
+    "name": "3 Panel Window",
+    "description": "Triple-paneled Simplex window with horizontal ventilation slats.",
+    "category": "Windows",
+    "image": "assets/collection/w3.5.webp",
+    "code": "W3.5"
+  },
+  {
+    "name": "4 Panel Window",
+    "description": "Four-paneled Simplex window with horizontal ventilation slats.",
+    "category": "Windows",
+    "image": "assets/collection/w4.1.webp",
+    "code": "W4.1"
+  },
+  {
+    "name": "4 Panel Window",
+    "description": "Four-paneled Simplex window with horizontal slats and split center sections.",
+    "category": "Windows",
+    "image": "assets/collection/w4.2.webp",
+    "code": "W4.2"
+  },
+  {
+    "name": "I Max Window",
+    "description": "Triple-paneled Simplex window with horizontal slats and two open frames.",
+    "category": "Windows",
+    "image": "assets/collection/imax.webp",
+    "code": "IMAX"
+  },
+  {
+    "name": "Sliding Window",
+    "description": "Double-paneled Simplex sliding window with horizontal slats.",
+    "category": "Windows",
+    "image": "assets/collection/slidingwindow.webp",
+    "code": "SLIDINGWINDOW"
+  },
+  {
+    "name": "1 Panel French Window",
+    "description": "Simplex window divided into three vertically stacked sections, all featuring horizontal slats.",
+    "category": "French windows",
+    "image": "assets/collection/fw1.1.webp",
+    "code": "FW1.1"
+  },
+  {
+    "name": "1 Panel French Window",
+    "description": "Single-paneled Simplex window featuring thin horizontal ventilation slats.",
+    "category": "French windows",
+    "image": "assets/collection/fw1.2.webp",
+    "code": "FW1.2"
+  },
+  {
+    "name": "1 Panel French Window",
+    "description": "Single-paneled Simplex window with a slatted upper section and a louvered bottom.",
+    "category": "French windows",
+    "image": "assets/collection/fw1.3.webp",
+    "code": "FW1.3"
+  },
+  {
+    "name": "1 Panel French Window",
+    "description": "Simplex window featuring a slatted upper section and a separate louvered bottom panel.",
+    "category": "French windows",
+    "image": "assets/collection/fw1.4.webp",
+    "code": "FW1.4"
+  },
+  {
+    "name": "1 Panel French Window",
+    "description": "Single-paneled Simplex window with a full square grid design.",
+    "category": "French windows",
+    "image": "assets/collection/fw1.5.webp",
+    "code": "FW1.5"
+  },
+  {
+    "name": "2 Panel French Window",
+    "description": "Double-paneled Simplex window with horizontal louvered slats.",
+    "category": "French windows",
+    "image": "assets/collection/fw2.1.webp",
+    "code": "FW2.1"
+  },
+  {
+    "name": "2 Panel French Window",
+    "description": "Simplex window split into upper and lower hinged sections, featuring horizontal slats.",
+    "category": "French windows",
+    "image": "assets/collection/fw2.2.webp",
+    "code": "FW2.2"
+  },
+  {
+    "name": "2 Panel French Window",
+    "description": "Double-paneled Simplex window with slatted upper sections and louvered bottom panels.",
+    "category": "French windows",
+    "image": "assets/collection/fw2.3.webp",
+    "code": "FW2.3"
+  },
+  {
+    "name": "3 Panel French Window",
+    "description": "Triple-paneled Simplex window with horizontal ventilation slats.",
+    "category": "French windows",
+    "image": "assets/collection/fw3.1.webp",
+    "code": "FW3.1"
+  },
+  {
+    "name": "3 Panel French Window",
+    "description": "Triple-paneled Simplex window featuring vertical bars and a horizontal divider.",
+    "category": "French windows",
+    "image": "assets/collection/fw3.2.webp",
+    "code": "FW3.2"
+  },
+  {
+    "name": "3 Panel French Window",
+    "description": "Simplex window with horizontal slats and a center section divided into three stacked panels.",
+    "category": "French windows",
+    "image": "assets/collection/fw3.3.webp",
+    "code": "FW3.3"
+  },
+  {
+    "name": "4 Panel French Window",
+    "description": "Four-paneled Simplex window with slatted upper sections and louvered bottom panels.",
+    "category": "French windows",
+    "image": "assets/collection/fw4.1.webp",
+    "code": "FW4.1"
+  },
+  {
+    "name": "1 Panel Kitchen Window",
+    "description": "Single-paneled Simplex window with horizontal ventilation slats.",
+    "category": "Kitchen windows",
+    "image": "assets/collection/kw1.1.webp",
+    "code": "KW1.1"
+  },
+  {
+    "name": "2 Panel Kitchen Window",
+    "description": "Double-paneled Simplex window with horizontal slats.",
+    "category": "Kitchen windows",
+    "image": "assets/collection/kw2.1.webp",
+    "code": "KW2.1"
+  },
+  {
+    "name": "3 Panel Kitchen Window",
+    "description": "Triple-paneled Simplex window with horizontal ventilation slats.",
+    "category": "Kitchen windows",
+    "image": "assets/collection/kw3.1.webp",
+    "code": "KW3.1"
+  },
+  {
+    "name": "3 Panel Kitchen Window",
+    "description": "Triple-paneled Simplex window with divided horizontal slats.",
+    "category": "Kitchen windows",
+    "image": "assets/collection/kw3.2.webp",
+    "code": "KW3.2"
+  },
+  {
+    "name": "Ventilator",
+    "description": "Single-paneled Simplex ventilator with horizontal slats.",
+    "category": "Ventilators",
+    "image": "assets/collection/v1.2.webp",
+    "code": "V1.2"
+  },
+  {
+    "name": "Ventilator With Exhaust",
+    "description": "Simplex ventilator featuring a slatted panel and a dedicated exhaust vent opening.",
+    "category": "Ventilators",
+    "image": "assets/collection/v1.1.webp",
+    "code": "V1.1"
+  },
+  {
+    "name": "2 Panel Ventilator",
+    "description": "Double-paneled Simplex ventilator with horizontal slats and top hinges.",
+    "category": "Ventilators",
+    "image": "assets/collection/v2.1.webp",
+    "code": "V2.1"
+  },
+  {
+    "name": "Mesh Window",
+    "description": "Triple-paneled Simplex mesh window featuring horizontal slats and open outer frames.",
+    "category": "Windows",
+    "image": "assets/collection/meshwindow.webp",
+    "code": "MESHWINDOW"
+  },
+  {
+    "name": "Bay Window",
+    "description": "Three-paneled Simplex bay window featuring angled side sections and horizontal slats.",
+    "category": "Architectural windows",
+    "image": "assets/collection/baywindow.webp",
+    "code": "BAYWINDOW"
+  },
+  {
+    "name": "Corner Window",
+    "description": "Four-paneled Simplex corner window featuring a 90-degree angled design and horizontal slats.",
+    "category": "Architectural windows",
+    "image": "assets/collection/cornerwindow.webp",
+    "code": "CORNERWINDOW"
+  },
+  {
+    "name": "Corner Window",
+    "description": "Multi-paneled Simplex corner window featuring a top transom section and horizontal slats.",
+    "category": "Architectural windows",
+    "image": "assets/collection/cornerwindow1.1.webp",
+    "code": "CORNERWINDOW1.1"
+  },
+  {
+    "name": "Round Window",
+    "description": "Round double-paneled Simplex window featuring horizontal slats and center hinges.",
+    "category": "Architectural windows",
+    "image": "assets/collection/roundwindow1.webp",
+    "code": "ROUNDWINDOW1"
+  },
+  {
+    "name": "Arch Window",
+    "description": "Arched four-paneled Simplex window featuring horizontal slats and central double doors.",
+    "category": "Architectural windows",
+    "image": "assets/collection/archwindow.webp",
+    "code": "ARCHWINDOW"
+  },
+  {
+    "name": "Door Frame With Manchari",
+    "description": "Simplex doorframe featuring a step manchari profile.",
+    "category": "Door frames",
+    "image": "assets/collection/df1.1.webp",
+    "code": "DF1.1"
+  },
+  {
+    "name": "Door Frame With Manchari",
+    "description": "Simplex doorframe featuring a two-step manchari profile.",
+    "category": "Door frames",
+    "image": "assets/collection/df1.2.webp",
+    "code": "DF1.2"
+  },
+  {
+    "name": "Door Frame With Sill",
+    "description": "Simplex doorframe featuring a flat profile and a bottom sill.",
+    "category": "Door frames",
+    "image": "assets/collection/df1.3.webp",
+    "code": "DF1.3"
+  },
+  {
+    "name": "Door Frame Without Sill",
+    "description": "Simplex doorframe featuring a flat profile without a bottom sill.",
+    "category": "Door frames",
+    "image": "assets/collection/df1.5.webp",
+    "code": "DF1.5"
+  },
+  {
+    "name": "Oval Panel Steel Door",
+    "description": "A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.",
+    "category": "Steel doors",
+    "image": "assets/collection/door-1.webp",
+    "code": "CAT-D1"
+  },
+  {
+    "name": "Classic Panel Steel Door",
+    "description": "A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.",
+    "category": "Steel doors",
+    "image": "assets/collection/door-2.webp",
+    "code": "CAT-D2"
+  },
+  {
+    "name": "Linear Panel Steel Door",
+    "description": "A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.",
+    "category": "Steel doors",
+    "image": "assets/collection/door-3.webp",
+    "code": "CAT-D3"
+  },
+  {
+    "name": "Arched Panel Steel Door",
+    "description": "A decorative steel door design from the Simplex catalogue. Ask our team about available sizes and finishes.",
+    "category": "Steel doors",
+    "image": "assets/collection/door-4.webp",
+    "code": "CAT-D4"
+  }
+]
