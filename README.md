@@ -19,7 +19,7 @@ Open this folder in VS Code. Use Live Server to preview `index.html`, or run `py
 
 Existing product descriptions and dealer contact details were retained. Decorative steel door images were added from the supplied catalogue; their descriptive names and CAT-D reference labels are website labels, not manufacturer SKU claims. Confirm sizes, finishes and specifications with Simplex. No prices, warranty terms or certification numbers were invented.
 
-Enquiries use the existing Web3Forms integration. The browser checks both the response status and the service's success flag, and offers telephone contact if delivery cannot be confirmed. The existing WhatsApp link is retained. Real delivery to the intended recipient must be verified by the site owner; no test customer enquiry was sent.
+Enquiries use FormSubmit and are addressed to simplexwindows14@gmail.com. The browser checks the HTTP status and explicit success flag, and preserves entered details on failure. An activation email was requested for https://www.simplexwindow.com/. The owner chose to activate later: callback email delivery is NOT verified and requires clicking Activate Form in that inbox, then sending a test from the live website. The existing WhatsApp link remains available.
 
 ## Publish through the existing repository
 
@@ -30,3 +30,7 @@ The redesigned files do not themselves change GitHub Pages settings, GoDaddy DNS
 ## Checks
 
 Reviewed homepage and product/enquiry layouts in the browser at desktop and mobile widths. Verified category filtering, search reset/empty state, mobile navigation, product-specific enquiry selection, and dealer search. Check the project handoff for the final publishing status.
+
+## October refinements
+
+Added the supplied Kalabhavan Shajohn portrait and brand ambassador section, the actual footer logo, a factory map using the supplied Google embed, rounded surfaces, smaller product imagery with hover zoom, and an accessible animated image viewer. Reduced-motion preferences disable animation. The Google listing in the supplied map is named SIMPLEX ROOFING SOLUTIONS.

@@ -12,8 +12,8 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.simplexwindow.com/assets/collection/campaign.webp">
     <link rel="icon" href="assets/LOGO.ico">
-    <link rel="stylesheet" href="assets/site.css">
-    <script src="assets/site.js" defer>
+    <link rel="stylesheet" href="assets/site.css?v=20261003-2">
+    <script src="assets/site.js?v=20261003-2" defer>
     </script>
   </head>
   <body>
@@ -195,6 +195,22 @@
           </div>
         </div>
       </section>
+
+      <section class="section container ambassador" id="brand-ambassador" aria-labelledby="ambassador-title">
+        <div class="ambassador-portrait">
+          <img src="assets/collection/brand-ambassador.webp" alt="Kalabhavan Shajohn, brand ambassador for Simplex Windows and Doors" width="1080" height="1350" loading="lazy">
+          <span class="portrait-label">THE FACE OF SIMPLEX</span>
+        </div>
+        <div class="ambassador-copy">
+          <p class="eyebrow">OUR BRAND AMBASSADOR</p>
+          <h2 id="ambassador-title">Kalabhavan<br><em>Shajohn.</em></h2>
+          <p class="ambassador-lead">A familiar face.<br>A shared commitment to quality.</p>
+          <p>We are proud to welcome Kalabhavan Shajohn as the brand ambassador for Simplex Windows &amp; Doors.</p>
+          <p>Our association celebrates what a home means to every family: comfort, character and a sense of security. At Simplex, we bring that care to steel windows and doors through thoughtful design and precision craftsmanship.</p>
+          <p>From distinctive architectural windows to everyday essentials, discover a collection created to complement the place you call home.</p>
+          <a class="text-link" href="products.html">Discover the Simplex collection ↗</a>
+        </div>
+      </section>
       <section class="campaign container">
         <img src="assets/collection/campaign.webp" alt="Simplex campaign featuring steel arch and round windows, with Malayalam brand messaging" loading="lazy" width="2200" height="917">
       </section>
@@ -216,6 +232,17 @@
           </div>
         </div>
       </section>
+
+      <section class="section container location-section" id="visit" aria-labelledby="visit-title">
+        <div class="location-copy">
+          <p class="eyebrow">COME SAY HELLO</p>
+          <h2 id="visit-title">Crafted in Kerala.<br><em>Find us here.</em></h2>
+          <p>Visit our location at KINFRA IIT Park, Kanjikode, Palakkad. Call ahead and our team will help you plan your visit.</p>
+          <address>Simplex Windows &amp; Doors<br>KINFRA IIT Park, Kanjikode<br>Palakkad, Kerala, India</address>
+          <div class="location-actions"><a class="button" href="https://maps.app.goo.gl/gfQ5o5R46YPv93cq8" target="_blank" rel="noopener noreferrer">Get directions ↗</a><a class="text-link" href="tel:+917510800577">Call before visiting ↗</a></div>
+        </div>
+        <div class="map-frame"><iframe title="Simplex location at KINFRA IIT Park, Kanjikode" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.613387076174!2d76.78379369999999!3d10.777542499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86b07a4b2722d%3A0x6802ab609a1ba20c!2sSIMPLEX%20ROOFING%20SOLUTIONS!5e1!3m2!1sen!2sin!4v1791030877705!5m2!1sen!2sin" width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><p>Simplex · KINFRA IIT Park, Kanjikode</p></div>
+      </section>
       <section class="cta">
         <div class="container">
           <div>
@@ -231,8 +258,7 @@
     <footer>
       <div class="container footer-grid">
         <div>
-          <a class="footer-brand" href="index.html">simplex<span>®</span>
-          </a>
+          <a class="footer-brand" href="index.html" aria-label="Simplex Windows and Doors home"><img src="assets/collection/logo.webp" alt="Simplex Windows and Doors" width="200" height="83" loading="lazy"></a>
           <p>Strength in every detail.<br>Character in every home.</p>
         </div>
         <div>
@@ -245,8 +271,9 @@
         <div>
           <h3>Let’s connect</h3>
           <a href="tel:+917510800577">+91 75108 00577</a>
+          <a href="mailto:simplexwindows14@gmail.com">simplexwindows14@gmail.com</a>
           <a href="https://wa.link/3ytl2k" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>
-          <p>KINFRA IIT Park, Kanjikode<br>Palakkad, Kerala, India</p>
+          <p>KINFRA IIT Park, Kanjikode<br>Palakkad, Kerala, India</p><a href="index.html#visit">Find us on the map ↗</a>
         </div>
       </div>
       <div class="container footer-bottom">
@@ -261,10 +288,9 @@
         <em>beautifully yours.</em>
       </h2>
       <p>Tell us a little about your project. Our team will help you explore the right design.</p>
-      <form id="enquiry-form">
-        <input type="hidden" name="access_key" value="d5c3d795-3a4f-4f79-bc11-1258b7dd6694">
-        <input type="hidden" name="subject" value="Simplex website project enquiry">
-        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true">
+      <form id="enquiry-form" action="https://formsubmit.co/simplexwindows14@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Simplex website project enquiry">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" aria-hidden="true">
         <label>Interested in<input id="interested-product" name="interested_product" readonly>
         </label>
         <div class="form-row">
@@ -276,10 +302,9 @@
         <label>Project location<input name="location" autocomplete="address-level2" required maxlength="180" placeholder="Town or city">
         </label>
         <label>Tell us more <span>(optional)</span>
-          <textarea name="message" rows="3" maxlength="3000" placeholder="Product, quantity, dimensions or preferred callback time">
-          </textarea>
+          <textarea name="message" rows="3" maxlength="3000" placeholder="Product, quantity, dimensions or preferred callback time"></textarea>
         </label>
-        <p class="form-note">By submitting, you agree that Simplex may contact you about this enquiry. Your details are sent through Web3Forms.</p>
+        <p class="form-note">By submitting, you agree that Simplex may contact you about this enquiry. Your details are sent securely through FormSubmit to the Simplex team.</p>
         <button class="button" type="submit">Request a callback ↗</button>
         <p id="form-status" role="status" aria-live="polite">
         </p>

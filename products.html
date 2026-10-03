@@ -12,8 +12,8 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.simplexwindow.com/assets/collection/campaign.webp">
     <link rel="icon" href="assets/LOGO.ico">
-    <link rel="stylesheet" href="assets/site.css">
-    <script src="assets/site.js" defer>
+    <link rel="stylesheet" href="assets/site.css?v=20261003-2">
+    <script src="assets/site.js?v=20261003-2" defer>
     </script>
   </head>
   <body>
@@ -781,8 +781,7 @@
     <footer>
       <div class="container footer-grid">
         <div>
-          <a class="footer-brand" href="index.html">simplex<span>®</span>
-          </a>
+          <a class="footer-brand" href="index.html" aria-label="Simplex Windows and Doors home"><img src="assets/collection/logo.webp" alt="Simplex Windows and Doors" width="200" height="83" loading="lazy"></a>
           <p>Strength in every detail.<br>Character in every home.</p>
         </div>
         <div>
@@ -795,8 +794,9 @@
         <div>
           <h3>Let’s connect</h3>
           <a href="tel:+917510800577">+91 75108 00577</a>
+          <a href="mailto:simplexwindows14@gmail.com">simplexwindows14@gmail.com</a>
           <a href="https://wa.link/3ytl2k" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>
-          <p>KINFRA IIT Park, Kanjikode<br>Palakkad, Kerala, India</p>
+          <p>KINFRA IIT Park, Kanjikode<br>Palakkad, Kerala, India</p><a href="index.html#visit">Find us on the map ↗</a>
         </div>
       </div>
       <div class="container footer-bottom">
@@ -811,10 +811,9 @@
         <em>beautifully yours.</em>
       </h2>
       <p>Tell us a little about your project. Our team will help you explore the right design.</p>
-      <form id="enquiry-form">
-        <input type="hidden" name="access_key" value="d5c3d795-3a4f-4f79-bc11-1258b7dd6694">
-        <input type="hidden" name="subject" value="Simplex website project enquiry">
-        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true">
+      <form id="enquiry-form" action="https://formsubmit.co/simplexwindows14@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Simplex website project enquiry">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" aria-hidden="true">
         <label>Interested in<input id="interested-product" name="interested_product" readonly>
         </label>
         <div class="form-row">
@@ -826,10 +825,9 @@
         <label>Project location<input name="location" autocomplete="address-level2" required maxlength="180" placeholder="Town or city">
         </label>
         <label>Tell us more <span>(optional)</span>
-          <textarea name="message" rows="3" maxlength="3000" placeholder="Product, quantity, dimensions or preferred callback time">
-          </textarea>
+          <textarea name="message" rows="3" maxlength="3000" placeholder="Product, quantity, dimensions or preferred callback time"></textarea>
         </label>
-        <p class="form-note">By submitting, you agree that Simplex may contact you about this enquiry. Your details are sent through Web3Forms.</p>
+        <p class="form-note">By submitting, you agree that Simplex may contact you about this enquiry. Your details are sent securely through FormSubmit to the Simplex team.</p>
         <button class="button" type="submit">Request a callback ↗</button>
         <p id="form-status" role="status" aria-live="polite">
         </p>
