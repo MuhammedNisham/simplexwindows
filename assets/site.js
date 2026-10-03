@@ -9,14 +9,36 @@ const dialog = document.querySelector('#enquiry');
 const form = document.querySelector('#enquiry-form');
 const status = document.querySelector('#form-status');
 let returnFocus;
+const enquiryTitle = document.querySelector('#enquiry-title');
+const originalEnquiryTitle = enquiryTitle.innerHTML;
+const enquiryIntro = dialog.querySelector(':scope > p:not(.eyebrow)');
+const originalEnquiryIntro = enquiryIntro.textContent;
+let enquiryClosing = false;
+function closeEnquiry() {
+  if (enquiryClosing) return;
+  enquiryClosing = true;
+  dialog.classList.add('is-closing');
+  setTimeout(() => { dialog.close(); dialog.classList.remove('is-closing'); enquiryClosing = false; }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180);
+}
 document.querySelectorAll('[data-enquire]').forEach(button => button.addEventListener('click', () => {
   returnFocus = button;
   if (!form.querySelector('[type="submit"]').disabled) { form.reset(); status.textContent = ''; }
   document.querySelector('#interested-product').value = button.dataset.enquire;
+  const isDealer = button.dataset.dealer === 'true';
+  dialog.classList.toggle('dealer-enquiry', isDealer);
+  document.querySelector('#dealer-opportunity').hidden = !isDealer;
+  enquiryTitle.innerHTML = isDealer ? 'Build your next chapter.<br><em>Partner with Simplex.</em>' : originalEnquiryTitle;
+  enquiryIntro.textContent = isDealer ? 'Explore dealership and franchise opportunities with Simplex Windows & Doors.' : originalEnquiryIntro;
+  dialog.querySelector(':scope > .eyebrow').textContent = isDealer ? 'BECOME OUR DEALER' : 'YOUR NEXT PROJECT STARTS HERE';
+  document.querySelector('#location-label').textContent = isDealer ? 'Proposed dealership location / town' : 'Project location';
+  form.querySelector('[name="_subject"]').value = isDealer ? 'Simplex dealership / franchise enquiry' : 'Simplex website project enquiry';
+  form.querySelector('[name="message"]').placeholder = isDealer ? 'Business name, current activity, showroom details and the area you would like to serve' : 'Product, quantity, dimensions or preferred callback time';
   dialog.showModal(); document.body.classList.add('modal-open');
+  dialog.scrollTop = 0;
 }));
-dialog.querySelector('.close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
+dialog.querySelector('.close').addEventListener('click', closeEnquiry);
+dialog.addEventListener('cancel', event => { event.preventDefault(); closeEnquiry(); });
+dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) closeEnquiry(); } });
 dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); returnFocus?.focus(); });
 form.addEventListener('submit', async event => {
   event.preventDefault();
