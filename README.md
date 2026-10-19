@@ -34,3 +34,10 @@ Reviewed homepage and product/enquiry layouts in the browser at desktop and mobi
 ## October refinements
 
 Added the supplied Kalabhavan Shajohn portrait and brand ambassador section, the actual footer logo, a factory map using the supplied Google embed, rounded surfaces, smaller product imagery with hover zoom, and an accessible animated image viewer. Reduced-motion preferences disable animation. The Google listing in the supplied map is named SIMPLEX ROOFING SOLUTIONS.
+
+## 19 October 2026: company section and search metadata
+
+Added the supplied drone photograph and company introduction between the catalogue and map on the homepage. The layout stacks on mobile and the image loads lazily. Added page-specific Kerala product/dealer metadata, social previews, homepage Organization/WebSite structured data, robots.txt with OAI-SearchBot access, and a sitemap for the three canonical pages. Existing product data, enquiry flows, catalogue PDF and domain configuration are unchanged.
+
+Publish by copying this folder's contents to the existing GitHub Pages repository and pushing to its configured publishing branch. After deployment, check /robots.txt and /sitemap.xml on the live domain, then submit the sitemap in Google Search Console. If a firewall or CDN is used, ensure it permits OpenAI's published search crawler IP ranges. Crawling permission does not guarantee indexing, rankings or ChatGPT recommendations. GPTBot training access is a separate setting; no specific training policy was added.
+Reference: https://developers.openai.com/api/docs/bots
