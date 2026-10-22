@@ -49,3 +49,13 @@ a.search-card:hover { border-color:var(--deep); }
 main>.search-links { width:calc(100% - 144px); max-width:1440px; margin-inline:auto; }
 @media(max-width:1100px) { main>.search-links { width:calc(100% - 64px); } }
 @media(max-width:800px) { main>.search-links { width:calc(100% - 40px); } }
+
+.comparison-scroll { overflow-x:auto; margin:28px 0; border:1px solid var(--line); border-radius:18px; }
+.comparison-scroll:focus-visible { outline:3px solid var(--red); outline-offset:5px; }
+.comparison-table { width:100%; border-collapse:collapse; text-align:left; font-size:14px; }
+.comparison-table caption { text-align:left; padding:18px 22px; font-weight:600; background:#edf0e9; }
+.comparison-table th,.comparison-table td { padding:18px 22px; vertical-align:top; border-bottom:1px solid var(--line); }
+.comparison-table thead { background:#edf0e9; }
+.comparison-table th:first-child { min-width:145px; }
+.comparison-table tr:last-child td,.comparison-table tr:last-child th { border-bottom:0; }
+@media(max-width:520px) { .comparison-table { min-width:650px; } }
