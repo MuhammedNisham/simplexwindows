@@ -22,7 +22,7 @@ function closeEnquiry() {
 }
 document.querySelectorAll('[data-enquire]').forEach(button => button.addEventListener('click', () => {
   returnFocus = button;
-  if (!form.querySelector('[type="submit"]').disabled) { form.reset(); status.textContent = ''; }
+  if (!form.querySelector('[type="submit"]').disabled) status.textContent = ''; // Keep the visitor's draft when reopening.
   document.querySelector('#interested-product').value = button.dataset.enquire;
   const isDealer = button.dataset.dealer === 'true';
   dialog.classList.toggle('dealer-enquiry', isDealer);

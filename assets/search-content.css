@@ -1,0 +1,51 @@
+/* Shared buying guides, FAQs and collection links. */
+.breadcrumbs { display:flex; flex-wrap:wrap; gap:8px; font-size:13px; margin-bottom:28px; color:var(--muted); }
+.breadcrumbs a { text-decoration:underline; text-underline-offset:4px; }
+.search-lead { max-width:760px; font-size:17px; line-height:1.8; }
+.search-overview { border-top:1px solid var(--line); }
+.search-card-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:32px 0; }
+.search-card { display:block; min-width:0; padding:30px; border:1px solid var(--line); border-radius:22px; background:#fff; }
+.search-card h3 { font:28px/1.2 var(--serif); margin-bottom:18px; }
+.search-card p { font-size:14px; line-height:1.8; }
+.search-card .text-link { display:inline-flex; margin:8px 12px 0 0; }
+a.search-card:hover { border-color:var(--deep); }
+.local-language { max-width:900px; font-size:16px; line-height:1.9; }
+.guide-feature { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1fr); gap:64px; align-items:center; margin-bottom:70px; }
+.guide-feature>img,.guide-feature>.image-zoom { width:100%; border-radius:22px; overflow:hidden; }
+.guide-feature img { width:100%; max-height:560px; object-fit:contain; background:#eeefea; }
+.guide-feature p { font-size:15px; }
+.guide-note { font-size:14px; color:var(--muted); }
+.guide-note a,.buyer-faq a,.buying-grid a { text-decoration:underline; text-underline-offset:3px; }
+.buying-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; margin:32px 0; }
+.buying-grid>div { padding:28px; border:1px solid var(--line); border-radius:22px; }
+.buying-grid h3 { font:27px/1.3 var(--serif); }
+.buying-grid ul { padding-left:22px; }
+.buying-grid li { margin-bottom:12px; }
+.buyer-faq { border-top:1px solid var(--line); }
+.buyer-faq details { padding:22px 0; border-bottom:1px solid var(--line); }
+.buyer-faq summary { cursor:pointer; font-weight:600; font-size:17px; }
+.buyer-faq summary:focus-visible { outline:3px solid var(--red); outline-offset:5px; }
+.buyer-faq details>div { max-width:860px; padding-top:18px; }
+.buyer-faq details p { margin-bottom:0; }
+.search-links { display:flex; flex-wrap:wrap; gap:14px 26px; padding:28px 0; border-top:1px solid var(--line); }
+.search-links a { text-decoration:underline; text-underline-offset:4px; font-size:14px; }
+.guide-end { padding-bottom:48px; }
+.order-steps { padding-left:24px; max-width:850px; }
+.order-steps li { padding-left:8px; margin:18px 0; }
+@media(max-width:800px) {
+ .search-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .guide-feature { grid-template-columns:1fr; gap:30px; }
+ .guide-feature img { max-height:440px; }
+ .buying-grid { gap:20px; }
+}
+@media(max-width:520px) {
+ .search-card-grid,.buying-grid { grid-template-columns:1fr; }
+ .search-card,.buying-grid>div { padding:24px; }
+ .search-lead { font-size:16px; }
+ .guide-feature { margin-bottom:45px; }
+ .buyer-faq summary { font-size:16px; }
+}
+
+main>.search-links { width:calc(100% - 144px); max-width:1440px; margin-inline:auto; }
+@media(max-width:1100px) { main>.search-links { width:calc(100% - 64px); } }
+@media(max-width:800px) { main>.search-links { width:calc(100% - 40px); } }
