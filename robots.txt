@@ -1,8 +1,46 @@
 User-agent: *
 Allow: /
 
-# Allow discovery in ChatGPT Search.
+# Google Search and Gemini
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Bing (also feeds Copilot and some ChatGPT answers)
+User-agent: bingbot
+Allow: /
+
+# ChatGPT / OpenAI
 User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Claude / Anthropic
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://www.simplexwindow.com/sitemap.xml
